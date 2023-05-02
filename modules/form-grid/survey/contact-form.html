@@ -1,0 +1,126 @@
+<div id=D__ID class="bg">
+    <div class="container mt-95 body_color">
+        <div class="formbox">
+            <form id=F__ID>
+                <div class="formgroup">
+                    <span class="question">
+                        <p>I would like to provide my contact details for the following:</p>
+                    </span>
+                    <div class="questiongroup">
+                        <fieldset>
+                            <div id="interview_consent__ID" style="display:none">
+                                <input type="checkbox" id="interview__ID" name="interview" >
+                                <label class="rd_btn width_btn_full" for="interview__ID"><span
+                                        class="ticked">&check;&nbsp;&nbsp;&nbsp;</span>Participate in a semi-structured interview to further discuss my experiences and attitudes towards clinical care, sleep disturbance, and digital health. I have read the <a href="assets/pdf/PIS and CF for Interview of People with Chronic LBP, Version 1.0. December, 2022.pdf">(Patient Information Statement)</a> and consent to being contacted by study researcher
+                                </label><br>
+                            </div>
+                            <input type="checkbox" id="egift__ID" name="egift" >
+                            <label class="rd_btn width_btn_full" for="egift__ID"><span
+                                    class="ticked">&check;&nbsp;&nbsp;&nbsp;</span>Take part in a draw to receive an eGift card valued at $200
+                            </label><br>
+                            <input type="checkbox" id="copy__ID" name="copy" >
+                            <label class="rd_btn width_btn_full" for="copy__ID"><span
+                                            class="ticked">&check;&nbsp;&nbsp;&nbsp;</span>To receive a copy of publication from this study
+                            </label><br>
+                        </fieldset>
+                    </div>
+                </div>
+                <div id="S1_1__ID">
+                    <div class="formgroup">
+                        <div class="questiongroup ">
+                            <span class="question">If so, please provide your contact details below:</span>
+                            <fieldset class="">
+                                <span class="question">Mobile Number</span>
+                                <input class="formcontrol" type="number"  name="mobile" placeholder=""  />
+                            </fieldset>
+                            <fieldset class="">
+                                <span class="question">Email Address</span>
+                                <input class="formcontrol" type="email" name="email" placeholder=""  />
+                            </fieldset>
+                        </div>
+                    </div>
+                    <div class="formgroup right">
+                        <button id="submit__ID" type="submit" class="submit_btn">Submit</button>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <fieldset class="">
+                        <span>
+                            <p><b>You’re all done! Thank you for taking the time to complete this survey. Your participation is appreciated.</b></p> 
+                                <p>If you have any questions or concerns regarding this questionnaire, please contact James Puterflam (PhD student) at james.puterflam@sydney.edu.au</p>
+                            <p>&nbsp;</p>
+                        </span>
+                    </fieldset>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script>
+        function F__ID() {
+            VmInclude: '__HOST__/assets/js/form.01.js'
+            //---------------------------------------
+            $('#D__ID').on('load', function () {
+                $('#page_counter').text("Final comments and prize draw sign up"); 
+                $('#S1_1__ID').hide();
+                if(m.input.disturb_sleep=='1'){
+                    $('#interview_consent__ID').show();
+                }
+            });
+
+            $("#F__ID input[name=interview]").on('change', function () {
+                if ($('#F__ID input[name=egift]:checked').val() == 'on' || $('#F__ID input[name=copy]:checked').val() == 'on' || $('#F__ID input[name=interview]:checked').val() == 'on' ) {
+                    $('#S1_1__ID').show();
+                    $("#F__ID input[name=email]").prop('required', 'true');
+                    $("#F__ID input[name=mobile]").prop('required', 'true');
+                }
+                else {
+                    $('#S1_1__ID').hide();
+                    $("#F__ID input[name=email]").removeAttr('required');
+                    $("#F__ID input[name=mobile]").removeAttr('required');
+                }
+            })
+
+            $("#F__ID input[name=egift]").on('change', function () {
+                if ($('#F__ID input[name=egift]:checked').val() == 'on' || $('#F__ID input[name=copy]:checked').val() == 'on' || $('#F__ID input[name=interview]:checked').val() == 'on' ) {
+                    $('#S1_1__ID').show();
+                    $("#F__ID input[name=email]").prop('required', 'true');
+                    $("#F__ID input[name=mobile]").prop('required', 'true');
+                }
+                else {
+                    $('#S1_1__ID').hide();
+                    $("#F__ID input[name=email]").removeAttr('required');
+                    $("#F__ID input[name=mobile]").removeAttr('required');
+                }
+            })
+
+            $("#F__ID input[name=copy]").on('change', function () {
+                if ($('#F__ID input[name=egift]:checked').val() == 'on' || $('#F__ID input[name=copy]:checked').val() == 'on' || $('#F__ID input[name=interview]:checked').val() == 'on' ) {
+                    $('#S1_1__ID').show();
+                    $("#F__ID input[name=email]").prop('required', 'true');
+                    $("#F__ID input[name=mobile]").prop('required', 'true');
+                }
+                else {
+                    $('#S1_1__ID').hide();
+                    $("#F__ID input[name=egift]").removeAttr('required');
+                    $("#F__ID input[name=mobile]").removeAttr('required');
+                }
+            })
+
+
+
+            var old_submit = m.submit;
+            m.submit = function (event) {
+                old_submit(event);
+                if (m.prefix == undefined) {
+                        $vm.load_module('thank-you', '', {});
+                }
+                else {
+                    $vm.load_module(m.prefix + 'thank-you', '', {})
+                }
+            }
+        }
+    </script>
+    <style>
+
+        /*VmInclude:__HOST__/assets/css/wapp-form.css*/
+    </style>

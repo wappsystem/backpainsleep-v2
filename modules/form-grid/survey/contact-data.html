@@ -1,0 +1,32 @@
+<div id=D__ID>
+    <div>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js       
+            //-------------------------------------
+            $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);            
+            //-------------------------------------
+            var fields="interview,egift,copy,mobile,email";
+             m.fields=""+fields+",Submit_date,Submitted_by,_Delete";
+            //-------------------------------------
+            var cell_render = m.cell_render;
+            m.cell_render=function(records,I,field,td){
+                switch(field){
+                    case 'interview':
+                    case 'egift':
+                    case 'copy':
+                        if(records[I].Data[field]=="on") td.html("1");
+                        else td.html("")
+                    break;
+                }
+                return cell_render;
+            }
+        }
+    </script>
+    <style>
+        /*VmInclude:__COMPONENT__/g/grid.01.css*/
+    </style>
+</div>

@@ -1,0 +1,28 @@
+<div id=D__ID>
+    <div>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js       
+            //-------------------------------------
+            $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);            
+            //-------------------------------------
+            var fields="";
+            fields+="Participant_uid,UID,partA,age,englishfluency,smartphone,shiftworker,travel2hours,disorders,sleep_disorders,medications,heavy_machinery,cbt";
+            fields+=",PHQ_9,ISI_1a,ISI_1b,ISI_1c,ISI_2,ISI_3,ISI_4,ISI_5,ISI";
+            fields+=",fall_asleep,sleep_attacks,muscle_weakness,hallucinations,paralyzed,heavy_snorer,stop_breathing,gasping,sleepy";
+            fields+=",legs_twitch,muscle_jerks,wake_leg_jerk,pace_around,wrong_times,stay_up_late,sleep_longer,bed_early,wake_early";
+            fields+=",unusual_behaviours,sleepwalk,night_terrors,act_out,nightmares,current_medication";
+            m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
+            //-------------------------------------
+            m.load=function(){
+                m.query={"Data.Participant_uid": {"$ne" : ""}}
+            }
+        }
+    </script>
+    <style>
+        /*VmInclude:__COMPONENT__/g/grid.01.css*/
+    </style>
+</div>

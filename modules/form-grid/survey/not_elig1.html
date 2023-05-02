@@ -1,0 +1,43 @@
+<div id=D__ID>
+    <form id="F__ID">
+        <main class="container mt-95">
+          <div class="formgroup">
+            <fieldset class="">
+              <p>&nbsp;</p>
+                  <p>
+                    Thank you for completing these screening questions.
+                  </p>
+                <p class="">
+                  Unfortunately, you are INELIGIBLE to complete the survey at this time.
+                </p>
+                <p>If you are worried about your back pain or sleep, please contact your GP or other health
+                  professional. For more information about low back pain or sleep, we recommend visiting the
+                  Health Direct <a href='https://www.healthdirect.gov.au/back-pain' target=_blank>(https://www.healthdirect.gov.au/back-pain)</a> or Sleep Health Foundation
+                  Websites <a href='https://www.sleephealthfoundation.org.au/' target=_blank>(https://www.sleephealthfoundation.org.au/)</a></p>
+                  <!--<p>If you would like to take part in other studies being run by the Woolcock, please register at <a href="https:www.researchvolunteer.org.au" target="_blank">www.researchvolunteer.org.au</a> or sign up to our monthly news at <a href="https://www.woolcock.org.au/subscribe" target="_blank">www.woolcock.org.au/subscribe.</a>
+                  </p>-->
+                  <p>&nbsp;</p>
+            </fieldset>
+        </div>
+          <div class="info" >
+            <div class="">
+                <p>
+                  <!--The ethical aspects of this research project have been approved by the Sydney Local Health District (SLHD) Health Research Ethics Committee (HREC) - Reference
+                  #X21-0265.-->
+                </p>
+            </div>
+          </div>
+        </main>
+      </form>
+<script>
+    function F__ID() {
+      $('#D__ID').on('load', function () {
+        $('#page_counter').text("Ineligible for survey");
+      });
+
+    }
+</script>
+<style>
+    /*VmInclude:__HOST__/assets/css/wapp-form.css*/
+</style>
+</div>

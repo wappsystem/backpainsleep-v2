@@ -1,0 +1,134 @@
+<div id=D__ID>
+    <div>
+        VmInclude:__COMPONENT__/g/grid.01.html
+    </div>
+    <script>
+        function F__ID(){
+            //-------------------------------------
+            VmInclude:__COMPONENT__/g/grid.01.js       
+            //-------------------------------------
+            $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);            
+            //-------------------------------------
+            var fields="";
+            fields+="Record_ID|UID,age18,pain,consent";
+            fields+=",age,gender,relationship,relationship_other,education,employment,employment_other";
+            fields+=",mean_pain,time_of_pain,tx_1,tx_2,tx_3,tx_4,tx_5,tx_6,tx_7,tx_8,tx_9,tx_10,tx_other";
+            fields+=",hp_prev_1,hp_prev_2,hp_prev_3,hp_prev_4,hp_prev_5,hp_prev_6,hp_prev_7,hp_prev_8,hp_prev_9,hp_prev_10,hp_prev_11,hp_prev_other";
+            fields+=",hp_curr_1,hp_curr_2,hp_curr_3,hp_curr_4,hp_curr_5,hp_curr_6,hp_curr_7,hp_curr_8,hp_curr_9,hp_curr_10,hp_curr_11,hp_curr_other"
+            fields+=",satisfied,sleep_dist,dx_sleep_disorder,sleep_disorder,sleep_disorder_other,hp_sleep_consult";
+            fields+=",hp_sleep_1,hp_sleep_2,hp_sleep_3,hp_sleep_4,hp_sleep_5,hp_sleep_6,hp_sleep_7,hp_sleep_8,hp_sleep_9,hp_sleep_10,hp_sleep_other"
+            fields+=",improve_sleep,improve_sleep_tx_1,improve_sleep_tx_2,improve_sleep_tx_3,improve_sleep_tx_4,improve_sleep_tx_5,improve_sleep_tx_6,improve_sleep_tx_7,improve_sleep_tx_8,improve_sleep_tx_9,improve_sleep_tx_other"
+            fields+=",improve_pain_sleep,improve_sleep_pain,dt_health_interv_familiar,dt_health,dt_health_used_1,dt_health_used_2,dt_health_used_3,dt_health_used_4,dt_health_used_5,dt_health_used_other"
+            fields+=",dt_interv,dt_interv_used_1,dt_interv_used_2,dt_interv_used_3,dt_interv_used_4,dt_interv_used_5,dt_interv_specific"
+            fields+=",dt_health_interv_sleep_familiar,dt_health_sleep,dt_health_sleep_used_1,dt_health_sleep_used_2,dt_health_sleep_used_3,dt_health_sleep_used_4,dt_health_sleep_used_5,dt_health_sleep_used_other"
+            fields+=",dt_sleep_interv_specific,dt_health_sleep_rec,dt_health_sleep_tx_rec_1,dt_health_sleep_tx_rec_2,dt_health_sleep_tx_rec_3,dt_health_sleep_tx_rec_4,dt_health_sleep_tx_rec_5,dt_health_sleep_tx_rec_other"
+            fields+=",hp_sleep_tx_1,hp_sleep_tx_2,hp_sleep_tx_3,hp_sleep_tx_4,hp_sleep_tx_5,hp_sleep_tx_6,hp_sleep_tx_7,hp_sleep_tx_8,hp_sleep_tx_10,hp_sleep_tx_11,hp_sleep_tx_other"
+            fields+=",dh_int_using_1,dh_int_using_2,dh_int_using_3,dh_int_using_4,dh_int_using_10,dh_int_using_11,dh_int_using_other"
+            m.fields=""+fields+",Submit_date,Submitted_by,_Delete";
+            //m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
+            //-------------------------------------
+            var cell_render = m.cell_render;
+            m.cell_render=function(records,I,field,td){
+                switch(field){
+                    case 'consent':
+                    case 'tx_1':
+                    case 'tx_2':
+                    case 'tx_3':
+                    case 'tx_4':
+                    case 'tx_5':
+                    case 'tx_6':
+                    case 'tx_7':
+                    case 'tx_8':
+                    case 'tx_9':
+                    case 'tx_10':
+                    case 'hp_prev_1':
+                    case 'hp_prev_2':
+                    case 'hp_prev_3':
+                    case 'hp_prev_4':
+                    case 'hp_prev_5':
+                    case 'hp_prev_6':
+                    case 'hp_prev_7':
+                    case 'hp_prev_8':
+                    case 'hp_prev_9':
+                    case 'hp_prev_10':
+                    case 'hp_prev_11':
+                    case 'hp_curr_1':
+                    case 'hp_curr_2':
+                    case 'hp_curr_3':
+                    case 'hp_curr_4':
+                    case 'hp_curr_5':
+                    case 'hp_curr_6':
+                    case 'hp_curr_7':
+                    case 'hp_curr_8':
+                    case 'hp_curr_9':
+                    case 'hp_curr_10':
+                    case 'hp_curr_11':
+                    case 'hp_sleep_1':
+                    case 'hp_sleep_2':
+                    case 'hp_sleep_3':
+                    case 'hp_sleep_4':
+                    case 'hp_sleep_5':
+                    case 'hp_sleep_6':
+                    case 'hp_sleep_7':
+                    case 'hp_sleep_8':
+                    case 'hp_sleep_9':
+                    case 'hp_sleep_10':
+                    case 'hp_sleep_11':
+                    case 'improve_sleep_tx_1':
+                    case 'improve_sleep_tx_2':
+                    case 'improve_sleep_tx_3':
+                    case 'improve_sleep_tx_4':
+                    case 'improve_sleep_tx_5':
+                    case 'improve_sleep_tx_6':
+                    case 'improve_sleep_tx_7':
+                    case 'improve_sleep_tx_8':
+                    case 'improve_sleep_tx_9':
+                    case 'dt_health_used_1':
+                    case 'dt_health_used_2':
+                    case 'dt_health_used_3':
+                    case 'dt_health_used_4':
+                    case 'dt_health_used_5':
+                    case 'dt_interv_used_1':
+                    case 'dt_interv_used_2':
+                    case 'dt_interv_used_3':
+                    case 'dt_interv_used_4':
+                    case 'dt_interv_used_5':
+                    case 'dt_health_sleep_used_1':
+                    case 'dt_health_sleep_used_2':
+                    case 'dt_health_sleep_used_3':
+                    case 'dt_health_sleep_used_4':
+                    case 'dt_health_sleep_used_5':
+                    case 'dt_health_sleep_tx_rec_1':
+                    case 'dt_health_sleep_tx_rec_2':
+                    case 'dt_health_sleep_tx_rec_3':
+                    case 'dt_health_sleep_tx_rec_4':
+                    case 'dt_health_sleep_tx_rec_5':
+                    case 'hp_sleep_tx_1':
+                    case 'hp_sleep_tx_2':
+                    case 'hp_sleep_tx_3':
+                    case 'hp_sleep_tx_4':
+                    case 'hp_sleep_tx_5':
+                    case 'hp_sleep_tx_6':
+                    case 'hp_sleep_tx_7':
+                    case 'hp_sleep_tx_8':
+                    case 'hp_sleep_tx_10':
+                    case 'hp_sleep_tx_11':
+                    case 'dh_int_using_1':
+                    case 'dh_int_using_2':
+                    case 'dh_int_using_3':
+                    case 'dh_int_using_4':
+                    case 'dh_int_using_10':
+                    case 'dh_int_using_11':
+                        if(records[I].Data[field]=="on") td.html("1");
+                        else td.html("")
+                    break;
+                }
+                return cell_render;
+            }
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        /*VmInclude:__COMPONENT__/g/grid.01.css*/
+    </style>
+</div>
