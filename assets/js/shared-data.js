@@ -11,7 +11,6 @@ m.set_req=function(){
 };
 //-------------------------------------
 m.load=function(){
-    console.log("BBBBBBBB: "+$vm.module_list[$vm.vm['__ID'].name].task_name)
         $('#nav_title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
         if(m.input!=undefined && m.input.record!=undefined){
         $('#export_section__ID').hide();

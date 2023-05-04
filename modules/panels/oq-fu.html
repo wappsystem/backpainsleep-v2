@@ -78,7 +78,7 @@
 			$('#items__ID label').each(function(){
 		        var $li=$(this);
 		        var m=$li.attr('m');
-		        if(status[m].rid==0){
+		        //if(status[m].rid==0){
                     jQuery.ajaxSetup({async:false});
                     $vm.request({cmd:"find-s",table:$vm.module_list[m].Table,options:{}},function(res){
                         if(res.permission==false){
@@ -94,7 +94,7 @@
                         }
                     })
                     jQuery.ajaxSetup({async:true});
-		        }
+		        //}
 		        if(status[m].rid==0){				
 					$li.removeClass('li_not_allowed__ID')
 					$li.addClass('li_allowed__ID')

@@ -27,17 +27,14 @@
 			}
             //--------------------------------------------------------            
             $('#panel__ID a').on('click',function(e){
-				console.log("SASAS")
                 e.preventDefault();
                 var href=$(this).attr('href');
                 var app=$(this).attr('app');
                 if(href!=undefined){
                     href=href.replace('?\/','');
                     href=href.replace(/\//g,'_');
-					console.log("SASAS1")
                     if(app==undefined) $vm.load_module(href,'',{});
-					console.log("SASAS2")
-                    else if($vm.module_list[href]!=undefined) window.open($vm.module_list[href].url);
+                    else if($vm.module_list[href]!=undefined) {window.open($vm.module_list[href].url);}
                     else alert("The '"+ href +"' is not defined in the module list");
                 }
             })
