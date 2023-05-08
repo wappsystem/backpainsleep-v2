@@ -19,7 +19,7 @@
   background-color: rgba(173, 173, 173, 0.8);
   color:rgb(0, 0, 0);
   border-radius: 5px;
-  height:100px;
+  /*height:100px;*/
   text-align: center;
   font-size:x-large;
   font-family: 'Roboto Slab';
@@ -27,7 +27,11 @@
   margin-right:auto;
 }
 #D__ID .header_text {
-padding:10px
+  padding:10px
+  }
+#D__ID .formbox {
+  padding-top:10px;
+  padding-bottom:10px;
 }
 #page_counter{
   font-size: smaller;
@@ -99,8 +103,13 @@ padding:10px
   }
 
   #D__ID .formgroup:hover {
-    background-color: #f0f0f0;
+    background-color: #f0f0f0;  
   }
+  #D__ID .zoom:hover{
+    /*transition: transform 0.2s;
+    transform: scale(1.03);*/
+  }
+
 
   #D__ID .formcontrol:read-only {
     background-color: #eee

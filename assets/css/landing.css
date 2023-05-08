@@ -1,7 +1,7 @@
-html,body{ margin:0; padding:0; height:100%; font-family:Arial;}
+html,body{ margin:0; padding:0;font-family:Arial;}
 body{background-size: cover; background-repeat: repeat-x; background-position: center top; }
 .bg{
-  background-image: url('../images/shutterstock_1890677452_small.png');
+  background-image: url('../images/shutterstock_290612009.jpg');
   /*height:100%;*/
   position: relative;
   opacity: 1;
