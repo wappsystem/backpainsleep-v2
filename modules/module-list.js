@@ -34,8 +34,8 @@
     m[p+"panel-oq-bl"]=              {url:H+"/panels/oq-bl.html"};
     m[p+"panel-oq-fu"]=              {url:H+"/panels/oq-fu.html"};
 
-    m[p+"quest-1-bl-data"]               ={url:H+"/form-grid/backend/ess-data.html",Table:"quest-1-bl-sleepback",form_module:"quest-1-bl-form",task_name:"Baseline - Questionnaire 1"};
-    m[p+"quest-1-bl-form"]               ={url:H+"/form-grid/backend/ess-form.html",Table:"quest-1-bl-sleepback",task_name:"Baseline - Questionnaire 1"};
+    m[p+"demographics-bl-data"]               ={url:H+"/form-grid/backend/demographics-data.html",Table:"demographics-bl-sleepback",form_module:"demographics-bl-form",task_name:"Baseline - Demographics"};
+    m[p+"demographics-bl-form"]               ={url:H+"/form-grid/backend/demographics-form.html",Table:"demographics-bl-sleepback",task_name:"Baseline - Demographics"};
     m[p+"quest-2-bl-data"]               ={url:H+"/form-grid/backend/ess-data.html",Table:"quest-2-bl-sleepback",form_module:"quest-2-bl-form",task_name:"Baseline - Questionnaire 2"};
     m[p+"quest-2-bl-form"]               ={url:H+"/form-grid/backend/ess-form.html",Table:"quest-2-bl-sleepback",task_name:"Baseline - Questionnaire 2"};
     m[p+"quest-3-bl-data"]               ={url:H+"/form-grid/backend/ess-data.html",Table:"quest-3-bl-sleepback",form_module:"quest-3-bl-form",task_name:"Baseline - Questionnaire 3"};
