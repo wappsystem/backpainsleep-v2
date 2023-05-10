@@ -488,7 +488,7 @@
               <div class="">
                 <label><span class="question">16. Do you have difficulty with breathing during sleep OR staying awake
                     during the day? </span></label><br>
-                <input id="sleep_disorder_1__ID" name="breathing_difficulty" type="radio" value="0" required>
+                <input id="breathing_difficulty_1__ID" name="breathing_difficulty" type="radio" value="0" required>
                 <label class="rd_btn" for="breathing_difficulty_1__ID">Yes</label>
                 <input id="breathing_difficulty_2__ID" name="breathing_difficulty" type="radio" value="1">
                 <label class="rd_btn" for="breathing_difficulty_2__ID">No</label>
@@ -852,7 +852,7 @@
         }
       });
       $("#F__ID input[name=breathing_difficulty]").on('change', function () {
-        if ($("#F__ID input[name=breathing_difficulty]:checked").val() == '0') {
+        if ($("#F__ID input[name=breathing_difficulty]:checked").val() == '0' || $("#F__ID input[name=snore]:checked").val() == '0') {
           $('#S5_17__ID').show();
           $('#F__ID input[name=ESS_1]').prop('required', 'true');
           $('#F__ID input[name=ESS_2]').prop('required', 'true');
@@ -876,7 +876,7 @@
         }
       });
       $("#F__ID input[name=snore]").on('change', function () {
-        if ($("#F__ID input[name=snore]:checked").val() == '0') {
+        if ($("#F__ID input[name=snore]:checked").val() == '0' || $("#F__ID input[name=breathing_difficulty]:checked").val() == '0' ) {
           $('#S5_17__ID').show();
           $('#F__ID input[name=ESS_1]').prop('required', 'true');
           $('#F__ID input[name=ESS_2]').prop('required', 'true');
@@ -980,7 +980,7 @@
             $("input[name='Smartphone']:checked").val() == '1' ||
             $("input[name='Shft_wrk']:checked").val() == '1' ||
             $("input[name='Shft_wrk']:checked").val() == '3' ||
-            $("input[name='time_diff']:checked").val() == '0') {
+            ($("input[name='time_diff']:checked").val() == '0' && $("input[name='jetlag']:checked").val() == '0')) {
             notelig = current_I;
             $('#F__ID *').removeAttr('disabled');
             old_submit(event);
@@ -988,6 +988,7 @@
         }
         if (current_I == 3) {
           if ($("input[name='Psych']:checked").val() == '0' ||
+            $("input[name='sleep_disorder']:checked").val() == '0' ||
             $("input[name='breathing_difficulty']:checked").val() == '0' ||
             $("input[name='trpy_dev']:checked").val() == '0' ||
             $("input[name='CBT']:checked").val() == '0' ||
