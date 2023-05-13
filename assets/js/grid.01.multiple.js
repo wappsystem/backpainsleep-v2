@@ -10,7 +10,7 @@ if(window.location.toString().indexOf('tb=demo')!=-1){
     //$('#D__ID').css('background-image','url("images/demo.png")')
     $('#D__ID').css('background-color','red')
 }			
-console.log(JSON.stringify(m.input))
+//console.log(JSON.stringify(m.input))
 //-------------------------------------
 m.set_req=function(){
 };

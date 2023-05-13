@@ -23,8 +23,8 @@
                             task_name:"Participants Data",
     };                   
     m[p+"participant-form"] ={url:H+"/form-grid/participant/participant-form.html",Table:"participant-sleepback",task_name:"Participant's Details"};
-    m[p+"notes-data"]       ={url:H+"/form-grid/form-grid/backend/notes-data.html",Table:"notes-sleepback",form_module:"notes-form",router:1},
-    m[p+"notes-form"]       ={url:H+"/form-grid/form-grid/backend/notes-form.html",Table:"notes-sleepback"},
+    m[p+"notes-data"]       ={url:H+"/form-grid/backend/notes-data.html",Table:"notes-sleepback",form_module:"notes-form"},
+    m[p+"notes-form"]       ={url:H+"/form-grid/backend/notes-form.html",Table:"notes-sleepback"},
 
     m[p+"oq-bl"] ={url:I+"/oq-bl.html"};
     m[p+"oq-fu"] ={url:I+"/oq-fu.html"};
