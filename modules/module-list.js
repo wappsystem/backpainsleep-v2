@@ -36,6 +36,10 @@
 
     m[p+"demographics-bl-data"]               ={url:H+"/form-grid/backend/demographics-data.html",Table:"demographics-bl-sleepback",form_module:"demographics-bl-form",task_name:"Baseline - Demographics"};
     m[p+"demographics-bl-form"]               ={url:H+"/form-grid/backend/demographics-form.html",Table:"demographics-bl-sleepback",task_name:"Baseline - Demographics"};
+    m[p+"BPI-bl-data"]               ={url:H+"/form-grid/backend/BPI-data.html",Table:"BPI-bl-sleepback",form_module:"BPI-bl-form",task_name:"Baseline - BPI"};
+    m[p+"BPI-bl-form"]               ={url:H+"/form-grid/backend/BPI-form.html",Table:"BPI-bl-sleepback",task_name:"Baseline - BPI"};
+    m[p+"PSQI-bl-data"]               ={url:H+"/form-grid/backend/PSQI-data.html",Table:"PSQI-bl-sleepback",form_module:"PSQI-bl-form",task_name:"Baseline - PSQI"};
+    m[p+"PSQI-bl-form"]               ={url:H+"/form-grid/backend/PSQI-form.html",Table:"PSQI-bl-sleepback",task_name:"Baseline - PSQI"};
     m[p+"quest-2-bl-data"]               ={url:H+"/form-grid/backend/ess-data.html",Table:"quest-2-bl-sleepback",form_module:"quest-2-bl-form",task_name:"Baseline - Questionnaire 2"};
     m[p+"quest-2-bl-form"]               ={url:H+"/form-grid/backend/ess-form.html",Table:"quest-2-bl-sleepback",task_name:"Baseline - Questionnaire 2"};
     m[p+"quest-3-bl-data"]               ={url:H+"/form-grid/backend/ess-data.html",Table:"quest-3-bl-sleepback",form_module:"quest-3-bl-form",task_name:"Baseline - Questionnaire 3"};

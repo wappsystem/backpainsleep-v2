@@ -15,7 +15,7 @@
     }
 
 #D__ID .header {
-  max-width:800px;
+  max-width:850px;
   background-color: rgba(173, 173, 173, 0.8);
   color:rgb(0, 0, 0);
   border-radius: 5px;
@@ -37,7 +37,7 @@
   font-size: smaller;
 }
 #D__ID .footer{
-  max-width:800px;
+  max-width:850px;
   margin-left:auto;
   margin-right:auto;
   text-align: center;
@@ -106,7 +106,7 @@
   border-radius: 5px;
 }
   #D__ID .mt-95 {
-    max-width: 800px;
+    max-width: 850px;
   }
 
   #D__ID .textleft {
@@ -205,7 +205,7 @@
   }
   #D__ID .grid-container-3-special {
     display: grid;
-    grid-template-columns: 120px 500px 120px;
+    grid-template-columns: 70px 640px 90px;
   }
   #D__ID .grid-container-2 {
     display: grid;
@@ -329,7 +329,7 @@
   }
 
   #D__ID .mt-95 {
-    max-width: 800px;
+    max-width: 850px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
