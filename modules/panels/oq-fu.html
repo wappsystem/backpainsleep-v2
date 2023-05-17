@@ -10,6 +10,9 @@
 				<h4 class= "">
 					Once they are completed please click on ‘sign-out’ below, to exit the system. <br>Thank you!
 				</h4>
+				<h3 id="thankyou__ID" style="display:none" class= "">
+					Thank you for completing the end-of-study survey.
+				</h3>
 				<a name=signinout onclick="$vm.signout();" class="btn">Sign out</a><br><br>
 			</div>
 		</div>
@@ -32,8 +35,7 @@
 		//--------------------------------------------------------
 		$('#D__ID').on('show',function(){
             var record=$vm.vm['__ID'].input.record;
-			id_list='quest-1-fu-form,quest-2-fu-form,quest-3-fu-form'
-			//id_list='eq-5d-bl-form,eheals-bl-form'
+			id_list='med-use-fu-form,BPI-fu-form,ISI-fu-form,PSQI-fu-form,PHQ-2-fu-form,GAD-7-fu-form,PBAS-fu-form,EQ-5D-fu-form'
             if(id_list==undefined){
                 alert("No questionnaire was found");
                 return;
@@ -91,6 +93,9 @@
                             status[m].rid=1;
 							$li.removeClass('li_not_allowed__ID')
 							$li.addClass('done__ID');
+							if(status[m].Table==$vm.module_list["EQ-5D-fu-form"].Table){
+								$('#thankyou__ID').css('display','block');
+							}
                         }
                     })
                     jQuery.ajaxSetup({async:true});

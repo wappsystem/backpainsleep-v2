@@ -10,6 +10,9 @@
 				<h4 class= "">
 					Once they are completed please click on ‘sign-out’ below, to exit the system. <br>Thank you!
 				</h4>
+				<h3 id="thankyou__ID" style="display:none" class= "">
+					Thank you for completing the baseline questionnaire. The research team will contact you shortly to let you know which research arm you have been randomized and how to proceed.
+				</h3>
 				<a name=signinout onclick="$vm.signout();" class="btn">Sign out</a><br><br>
 			</div>
 		</div>
@@ -32,7 +35,8 @@
 		//--------------------------------------------------------
 		$('#D__ID').on('show',function(){
             var record=$vm.vm['__ID'].input.record;
-			id_list='demographics-bl-form,quest-2-bl-form,quest-3-bl-form'
+			id_list='demographics-bl-form,BPI-bl-form,PSQI-bl-form,PHQ-2-bl-form,GAD-7-bl-form,PBAS-bl-form,EQ-5D-bl-form,eHEALs-bl-form'
+			//id_list='PBAS-bl-form,PHQ-2-bl-form'
             if(id_list==undefined){
                 alert("No questionnaire was found");
                 return;
@@ -90,6 +94,9 @@
                             status[m].rid=1;
 							$li.removeClass('li_not_allowed__ID')
 							$li.addClass('done__ID');
+							if(status[m].Table==$vm.module_list["eHEALs-bl-form"].Table){
+								$('#thankyou__ID').css('display','block');
+							}
                         }
                     })
                     jQuery.ajaxSetup({async:true});

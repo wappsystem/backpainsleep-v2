@@ -536,19 +536,7 @@
       //-------------------------------------
       var before_submit = m.before_submit;
       m.before_submit = function (data, index) {
-        var input = "pain_interference_total=[BPI_1]+[BPI_2]+[BPI_3]+[BPI_4]+[BPI_5]+[BPI_6]+[BPI_7]";
-        var calc_string = input.split("=");
-        var input_right = calc_string[1];
-        var output = "";
-        for (var m = 0; m < 12; m++) {
-          var single_input = ["Worst_pain_24h", "least_pain_24h", "average_pain_24h", "now_pain", "pain_relief_%", "BPI_1", "BPI_2", "BPI_3", "BPI_4", "BPI_5", "BPI_6", "BPI_7"][m];
-          if (input_right.indexOf(single_input) >= 0) {
-            input_right = input_right.replace(single_input, "parseFloat(data." + single_input + ")");
-          }
-        }
-        output = input_right; output = output.replaceAll("[", "").replaceAll("]", "");
-        var total = eval(output);
-        data.Pain_interference_total = (total.toFixed());
+        data.Pain_interference_total=parseInt(data.BPI_1)+parseInt(data.BPI_2)+parseInt(data.BPI_3)+parseInt(data.BPI_4)+parseInt(data.BPI_5)+parseInt(data.BPI_6)+parseInt(data.BPI_7);
         return before_submit(data, index);
       }
     }

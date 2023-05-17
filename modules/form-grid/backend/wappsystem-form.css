@@ -1,3 +1,37 @@
+#D__ID{
+    display: block;
+    height: unset;
+    min-height: 780px;
+    overflow: auto hidden; 
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;       
+}
+
+#D__ID .container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+#D__ID .mt-95 {
+    margin-top: 15px !important
+}
+#D__ID .grid-container-2 {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+  #D__ID .textright {
+    text-align: right;
+  }
+
+#D__ID .formbox {
+    background-color: white;
+    padding: 0px !important;
+    border-radius: 3px 3px 3px 3px !important
+}
 #D__ID .formbox h3 {
     font-family: 'Roboto Slab';
     font-size: 24px;
@@ -20,9 +54,61 @@
     border-radius: 3px 3px 0 0;
     margin-top: -5px
 }
-/* TOP OF FORM MARGIN */
-#D__ID .mt-95 {
-    margin-top: 15px !important
+
+#D__ID .formgroup{
+    margin-bottom: 0px !important;
+    padding: 5px 15px !important;
+    display: block !important;
+    border-bottom: 1px solid #E5EEF0 !important 
+}
+#D__ID .formcontrol:read-only {
+    background-color: #eee
+  }
+
+#D__ID fieldset{
+    border-width:0;
+}
+#D__ID .form-group {
+    margin-bottom: 0px !important;
+    padding: 5px 15px !important;
+    display: block !important;
+    border-bottom: 1px solid #E5EEF0 !important 
+}
+#D__ID .form-group input[type=text] {
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    color: #6D6F72;
+}
+#D__ID .form-group input[type=tel] {
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    color: #6D6F72;
+}
+#D__ID .form-group input[type=email] {
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    color: #6D6F72;
+}
+#D__ID .form-group input[type=number] {
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    color: #6D6F72;
+}
+#D__ID .form-group select {
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    color: #6D6F72;
+}
+#D__ID .form-group textarea {
+    font-family: 'Nunito Sans';
+    font-size: 16px;
+    color: #6D6F72;
+}
+#D__ID .form-group .questiongroup {
+    margin-left: 15px;
+}
+#D__ID .form-group .questiongroup label.radiobuttons {
+    margin-right: 10px;
 }
 #D__ID .form-group {
     display: block !important;
@@ -34,6 +120,7 @@
     color: #00263A;
     letter-spacing: 0;
     line-height: 28px;
+    font-weight:lighter;
 }
 #D__ID .form-group h6 {
     font-family: 'Roboto Slab';
@@ -42,36 +129,8 @@
     letter-spacing: 0;
     line-height: 28px;
 }
-#D__ID .small-label {
-    font-family: 'Nunito Sans';
-    font-weight:600;
-    font-size: 14px;
-    color: #444645;
-}
-#D__ID label {
-    font-family: 'Nunito Sans';
-    font-weight:600;
-    font-size: 14px;
-    color: #444645;
-    line-height: 21px;
-}
-#D__ID input[type="radio"] {
-    margin-right: 5px !important
-}
-#D__ID .form-control::-webkit-input-placeholder{color:#ccc;}
-#D__ID .form-control:-ms-input-placeholder{color:#ccc;}
-#D__ID .form-control::-moz-placeholder{color:#ccc;opacity: 1;}
-#D__ID .formbox {
+#D__ID .form-group :hover {
     background-color: white;
-    padding: 0px !important;
-    border-radius: 3px 3px 3px 3px !important
-}
-#D__ID .form-group {
-    padding: 5px 15px !important;
-    margin-bottom: 0px !important
-}
-#D__ID .form-group:hover {
-     background-color: #FCFBF5
 }
 /* SUBMIT BUTTON */
 #D__ID .btn-primary, #D__ID .btn-primary:active, #D__ID .btn-primary:visited, #D__ID .btn-primary:focus {
@@ -121,13 +180,35 @@
 #D__ID .btn-outline-light:hover {
     color: #EA7859;
 }
-#D__ID p.note {
-    font-family: 'Nunito Sans';
-    font-weight: lighter;
-    font-size: 16px;
-    color: #939597;
-    margin-left: 15px;
+#D__ID .flex{
+    display: flex;
 }
+#D__ID .formcontrol::-webkit-input-placeholder{color:#ccc;}
+#D__ID .formcontrol:-ms-input-placeholder{color:#ccc;}
+#D__ID .formcontrol::-moz-placeholder{color:#ccc;opacity: 1;}
+#D__ID .formcontrol {
+    padding: 5px 15px !important;
+    margin-bottom: 0px !important;    
+    display: block;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+#D__ID label {
+    font-family: 'Nunito Sans';
+    font-weight:600;
+    font-size: 14px;
+    color: #444645;
+    line-height: 21px;
+    margin-bottom: 0.5rem;
+}
+
 /* RADIO BUTTONS */
 #D__ID .radiobuttons {
     text-align:center;
@@ -183,83 +264,7 @@
     width: 0;
     height: 0;
 }
-/* CHECK BOX */
-#D__ID .checkboxes {
-    display: inline-block;
-    position: relative;
-    cursor: pointer;
-    padding-left: 30px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-#D__ID .checkboxes input {
-    position: absolute !important;
-    opacity: 0 !important;
-    cursor: pointer;
-}
-#D__ID .check_checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 22px;
-    width: 22px;
-    background-color: #C9C9C9;
-    border-radius: 0%;
-}
-#D__ID .checkboxes:hover input ~ .check_checkmark {
-    background-color: #506A88;
-}
-#D__ID .checkboxes input:checked ~ .check_checkmark {
-    background-color: #EA7859;
-}
-#D__ID .check_checkmark:after {
-    content: "";
-    position: absolute !important;
-    display: none;
-}
-/* Show the indicator (dot/circle) when checked */
-#D__ID .checkboxes input:checked ~ .check_checkmark:after {
-    display: block !important;
-}
-/* Style the indicator (dot/circle) */
-#D__ID .container .check_checkmark:after {
-    top: 0px;
-    left: 6px;
-    color:white;
-    content:"✔";
-}
-#D__ID .form-group input[type=text] {
-    font-family: 'Nunito Sans';
-    font-size: 16px;
-    color: #6D6F72;
-}
-#D__ID .form-group input[type=tel] {
-    font-family: 'Nunito Sans';
-    font-size: 16px;
-    color: #6D6F72;
-}
-#D__ID .form-group input[type=email] {
-    font-family: 'Nunito Sans';
-    font-size: 16px;
-    color: #6D6F72;
-}
-#D__ID .form-group input[type=number] {
-    font-family: 'Nunito Sans';
-    font-size: 16px;
-    color: #6D6F72;
-}
-#D__ID .form-group select {
-    font-family: 'Nunito Sans';
-    font-size: 16px;
-    color: #6D6F72;
-}
-#D__ID .form-group textarea {
-    font-family: 'Nunito Sans';
-    font-size: 16px;
-    color: #6D6F72;
-}
+
 #D__ID fieldset.subquestions legend {
     font-family: 'Nunito Sans';
     font-size: 16px;
@@ -267,12 +272,7 @@
     line-height: 21px;
     padding-top: 20px;
 }
-#D__ID .form-group .questiongroup {
-    margin-left: 15px;
-}
-#D__ID .form-group .questiongroup label.radiobuttons {
-    margin-right: 10px;
-}
+
 #D__ID .labelleft {
     margin-left:-15px;
 }
@@ -288,15 +288,21 @@
         margin-left:0;
     }
 }
-@media (min-width: 1200px) {
-    #D__ID .container {max-width:900px}
-}
-@media (min-width: 992px) {
-    #D__ID .container {max-width:900px}
+@media (min-width: 576px) {
+    #D__ID .container {max-width:540px}
 }
 @media (min-width: 768px) {
-    #D__ID .container {max-width:900px}
+    #D__ID .container {max-width:720px}
 }
-@media (min-width: 576px) {
-    #D__ID .container {max-width:900px}
+@media (min-width: 992px) {
+    #D__ID .container {max-width:960px}
+}
+@media (min-width: 1200px) {
+    #D__ID .container {max-width:1140px}
+}
+@media (max-width: 768px) {
+#D__ID .grid-container-2 {
+    grid-template-columns: auto;
+    text-align: -webkit-center;
+  }
 }
