@@ -48,10 +48,10 @@
     m[p+"GAD-7-bl-form"]               ={url:H+"/form-grid/backend/GAD-7-form.html",Table:"GAD-7-bl-sleepback",task_name:"Baseline - GAD-7"};
     m[p+"PBAS-bl-data"]               ={url:H+"/form-grid/backend/PBAS-data.html",Table:"PBAS-bl-sleepback",form_module:"PBAS-bl-form",task_name:"Baseline - PBAS"};
     m[p+"PBAS-bl-form"]               ={url:H+"/form-grid/backend/PBAS-form.html",Table:"PBAS-bl-sleepback",task_name:"Baseline - PBAS"};
-    m[p+"EQ-5D-bl-data"]               ={url:H+"/form-grid/backend/EQ-5D-data.html",Table:"EQ-5D-bl-sleepback",form_module:"EQ-5D-bl-form",task_name:"Baseline - EQ-5D"};
-    m[p+"EQ-5D-bl-form"]               ={url:H+"/form-grid/backend/EQ-5D-form.html",Table:"EQ-5D-bl-sleepback",task_name:"Baseline - EQ-5D"};
-    m[p+"eHEALs-bl-data"]               ={url:H+"/form-grid/backend/eHEALs-data.html",Table:"eHEALs-bl-sleepback",form_module:"eHEALs-bl-form",task_name:"Baseline - eHEALs"};
-    m[p+"eHEALs-bl-form"]               ={url:H+"/form-grid/backend/eHEALs-form.html",Table:"eHEALs-bl-sleepback",task_name:"Baseline - eHEALs"};
+    m[p+"EQ-5D-bl-data"]               ={url:H+"/form-grid/backend/eq-5d-data.html",Table:"EQ-5D-bl-sleepback",form_module:"EQ-5D-bl-form",task_name:"Baseline - EQ-5D"};
+    m[p+"EQ-5D-bl-form"]               ={url:H+"/form-grid/backend/eq-5d-form.html",Table:"EQ-5D-bl-sleepback",task_name:"Baseline - EQ-5D"};
+    m[p+"eHEALs-bl-data"]               ={url:H+"/form-grid/backend/eHEALS-data.html",Table:"eHEALs-bl-sleepback",form_module:"eHEALs-bl-form",task_name:"Baseline - eHEALs"};
+    m[p+"eHEALs-bl-form"]               ={url:H+"/form-grid/backend/eHEALS-form.html",Table:"eHEALs-bl-sleepback",task_name:"Baseline - eHEALs"};
 
     m[p+"med-use-fu-data"]               ={url:H+"/form-grid/backend/med-use-data.html",Table:"med-use-fu-sleepback",form_module:"med-use-fu-form",task_name:"Follow-up - Med-use"};
     m[p+"med-use-fu-form"]               ={url:H+"/form-grid/backend/med-use-form.html",Table:"med-use-fu-sleepback",task_name:"Follow-up - Med-use"};
@@ -67,8 +67,8 @@
     m[p+"GAD-7-fu-form"]               ={url:H+"/form-grid/backend/GAD-7-form.html",Table:"GAD-7-fu-sleepback",task_name:"Follow-up - GAD-7"};
     m[p+"PBAS-fu-data"]               ={url:H+"/form-grid/backend/PBAS-data.html",Table:"PBAS-fu-sleepback",form_module:"PBAS-fu-form",task_name:"Follow-up - PBAS"};
     m[p+"PBAS-fu-form"]               ={url:H+"/form-grid/backend/PBAS-form.html",Table:"PBAS-fu-sleepback",task_name:"Follow-up - PBAS"};
-    m[p+"EQ-5D-fu-data"]               ={url:H+"/form-grid/backend/EQ-5D-data.html",Table:"EQ-5D-fu-sleepback",form_module:"EQ-5D-fu-form",task_name:"Follow-up - EQ-5D"};
-    m[p+"EQ-5D-fu-form"]               ={url:H+"/form-grid/backend/EQ-5D-form.html",Table:"EQ-5D-fu-sleepback",task_name:"Follow-up - EQ-5D"};
+    m[p+"EQ-5D-fu-data"]               ={url:H+"/form-grid/backend/eq-5d-data.html",Table:"EQ-5D-fu-sleepback",form_module:"EQ-5D-fu-form",task_name:"Follow-up - EQ-5D"};
+    m[p+"EQ-5D-fu-form"]               ={url:H+"/form-grid/backend/eq-5d-form.html",Table:"EQ-5D-fu-sleepback",task_name:"Follow-up - EQ-5D"};
 
     //if(window.location.toString().indexOf('tb=demo')!=-1){
         for(p in $vm.module_list){
