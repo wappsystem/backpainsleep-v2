@@ -122,27 +122,27 @@ padding:10px
 
   #D__ID .grid-container-7 {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto;
+    grid-template-columns: 14% 14% 14% 14% 14% 14% 14%;
   }
 
   #D__ID .grid-container-6 {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
+    grid-template-columns: 16% 16% 16% 16% 16% 16%;
   }
 
   #D__ID .grid-container-5 {
     display: grid;
-    grid-template-columns: auto auto auto auto auto;
+    grid-template-columns: 20% 20% 20% 20% 20%;
   }
 
   #D__ID .grid-container-4 {
     display: grid;
-    grid-template-columns: auto auto auto auto;
+    grid-template-columns: 25% 25% 25% 25%;
   }
 
   #D__ID .grid-container-3 {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 33% 33% 33% 33%;
   }
 
   #D__ID .grid-container-3-fixed {
@@ -155,7 +155,7 @@ padding:10px
   }
   #D__ID .grid-container-2 {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 50% 50%;
   }
   #D__ID .grid-container-2-75-25 {
     display: grid;
@@ -168,8 +168,9 @@ padding:10px
   #D__ID input[type="radio"],
   #D__ID input[type="checkbox"] {
     opacity: 0;
-    position: relative;
-    left: 40px;
+    position: fixed;
+    /*position: relative;
+    left: 40px;*/
 
   }
 
@@ -181,6 +182,13 @@ padding:10px
     margin: 5px 0;
     display: inline-block;
   }
+  #D__ID .rd_btn_two_rows {
+    height:40px;
+  }
+
+  #D__ID .rd_btn_three_rows {
+    height:60px;
+  }
 
   #D__ID .width_btn_250 {
     width: 250px;
@@ -188,6 +196,9 @@ padding:10px
 
   #D__ID .width_88 {
     width: 88%;
+  }
+  #D__ID .width_80 {
+    width: 80%;
   }
   #D__ID .width_65 {
     width: 65%;

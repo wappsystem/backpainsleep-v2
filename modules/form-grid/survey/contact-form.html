@@ -57,7 +57,7 @@
                                 <div>
                                     <label>
                                         <span class="question"></span>
-                                        <input id="abcd" type=number name="telephone" class="formcontrol" required />
+                                        <input id="abcd" type=tel name="telephone" class="formcontrol" maxlength="10" pattern="\d{10}" required />
                                     </label>
                                 </div>
                             </div>
@@ -70,17 +70,30 @@
                                     <p>20. Contact preference</p>
                                 </span>
                                 <input id="cont_pref_0__ID" name="cont_pref" type="radio" value="0" required>
-                                <label id="cont_pref_button_text_0__ID" class="rd_btn "
+                                <label id="cont_pref_button_text_0__ID" class="rd_btn width_btn_full"
                                     for="cont_pref_0__ID">Email</label><br>
                                 <input id="cont_pref_1__ID" name="cont_pref" type="radio" value="1">
-                                <label id="cont_pref_button_text_1__ID" class="rd_btn "
+                                <label id="cont_pref_button_text_1__ID" class="rd_btn width_btn_full"
                                     for="cont_pref_1__ID">Text</label><br>
                                 <input id="cont_pref_2__ID" name="cont_pref" type="radio" value="2">
-                                <label id="cont_pref_button_text_2__ID" class="rd_btn "
+                                <label id="cont_pref_button_text_2__ID" class="rd_btn width_btn_full"
                                     for="cont_pref_2__ID">Both</label><br>
                             </fieldset>
                         </div>
                     </div>
+                    <div class="formgroup" id="link__ID" style="display:none!important">
+                        <div class="text-center">
+                            Continue ..<br><br>
+                            <i>Click on the link below to continue. Save the link to your favorits so you can easlily find it, if you need to return to the quesstionnaires.</i><br><br>
+                            <a id=asteroind_registration__ID target="_blank" style="color:#000;" ><span style='font-size:1.2rem;font-weight:bold;' id=refnum__ID></span></a>
+                            <br><br>
+                        </div>
+                    </div>
+                    <div style="display:none">
+                        <input type=text class=form-control name=_Password>
+                        <input type=text class=form-control name=List>
+                    </div>
+    
                     <div class="formgroup right">
                         <button id="submit__ID" type="submit" class="submit_btn">Submit</button>
                     </div>
@@ -103,8 +116,9 @@
             //---------------------------------------
             $('#D__ID').on('load', function () {
                 $('#S0_17__ID').hide();
+                console.log(JSON.stringify(m))
+                $('#F__ID input[name=_Password').val($vm.vm_password(8,false));
             });
-
             $("#F__ID input[name=consent]").on('change', function () {
                 if ($('#F__ID input[name=consent]:checked').val() == '0') {
                     $('#S0_17__ID').show();
@@ -121,6 +135,11 @@
                     $("#F__ID input[name=cont_pref]").removeAttr('required');
                 }
             })
+            //---------------------------------------
+            m.before_submit=function(data,index){
+                data.List='demographics-bl-form,BPI-bl-form,PSQI-bl-form,PHQ-2-bl-form,GAD-7-bl-form,PBAS-bl-form,EQ-5D-bl-form,eHEALs-bl-form'
+            }
+            //---------------------------------------
 
             m.after_insert = function (data, res) {
                 if (m.prefix == undefined) { $vm.load_module('thank-you', '', {}); }

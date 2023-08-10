@@ -35,6 +35,8 @@
     m[p+"panel-oq-fu"]=              {url:H+"/panels/oq-fu.html"};
     m[p+"randomisation-table-data"]=		{url:H+"/form-grid/backend/randomisation-table-data.html",Table:"randomisation-table-sleepback",form_module:"randomisation-table-form",task_name:"Randomisation Table"},
     m[p+"randomisation-table-form"]=		{url:H+"/form-grid/backend/randomisation-table-form.html",Table:"randomisation-table-sleepback",task_name:"Randomisation Table"},
+    m[p+"access-code-data"] ={url:H+"/form-grid/backend/access-code-data.html",Table:"access-code-sleepback",form_module:"access-code-form", task_name:"Access Code" };
+    m[p+"access-code-form"] ={url:H+"/form-grid/backend/access-code-form.html",Table:"access-code-sleepback", task_name:"Access Code" };
 
     m[p+"demographics-bl-data"]               ={url:H+"/form-grid/backend/demographics-data.html",Table:"demographics-bl-sleepback",form_module:"demographics-bl-form",task_name:"Baseline - Demographics"};
     m[p+"demographics-bl-form"]               ={url:H+"/form-grid/backend/demographics-form.html",Table:"demographics-bl-sleepback",task_name:"Baseline - Demographics"};

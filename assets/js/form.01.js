@@ -9,6 +9,7 @@ m.load=function(){
     $('#F__ID')[0].reset();
     $('#submit__ID').show();
     $('#delete__ID').hide(); if(m.input!=undefined && m.input.record!=undefined && m.input.record._id!==undefined) $('#delete__ID').show();
+    $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name)
     //console.log(JSON.stringify(m.input))
     if(m.input!=undefined) $vm.deserialize(m.input.record,'#F__ID');
 }
