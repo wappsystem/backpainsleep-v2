@@ -9,23 +9,39 @@
 				<!-- participant name and study id -->
 				<div class="formgroup">
 					<fieldset class="">
-						<div class="grid-container-2">
+						<div class="grid-container-1">
 							<div><label style="width:100%"><span class="question">Participant ID</span>
 									<input type=text id="record__ID" class=formcontrol readonly />
 								</label>
 							</div>
-							<div><label style="width:100%"><span class="question">Subject ID</span>
-									<input type=text name="Subject_ID" class=formcontrol />
-								</label>
-							</div>
 						</div>
-						<div class="grid-container-2">
-							<div><label style="width:100%"><span class="question">Screening Number</span>
-									<input type=text name="Screening_Number" class=formcontrol />
+						<span class="question">
+							Contact preference
+						</span>
+						<div class="grid-container-1">
+							<label>
+								<input id="cont_pref_0__ID" name="cont_pref" type="radio" value="0" required>
+								<label id="cont_pref_button_text_0__ID" class="rd_btn width_btn_130"
+									for="cont_pref_0__ID">Email</label>
+								<input id="cont_pref_1__ID" name="cont_pref" type="radio" value="1">
+								<label id="cont_pref_button_text_1__ID" class="rd_btn width_btn_130"
+									for="cont_pref_1__ID">Text</label>
+								<input id="cont_pref_2__ID" name="cont_pref" type="radio" value="2">
+								<label id="cont_pref_button_text_2__ID" class="rd_btn width_btn_130"
+									for="cont_pref_2__ID">Both</label>
+							</label>
+						</div>
+						<div class="grid-container-3">
+							<div><label style="width:100%"><span class="question">Name</span>
+									<input type=text name="name" class=formcontrol />
 								</label>
 							</div>
-							<div><label style="width:100%"><span class="question">Subject Initials</span>
-									<input type=text name="Subject_Initials" class=formcontrol />
+							<div><label style="width:100%"><span class="question">Telephone</span>
+									<input type=text name="telephone" class=formcontrol />
+								</label>
+							</div>
+							<div><label style="width:100%"><span class="question">Email</span>
+									<input type=text name="email" class=formcontrol />
 								</label>
 							</div>
 						</div>
@@ -34,22 +50,15 @@
 				<div class="formgroup">
 					<div class="questiongroup ">
 						<fieldset class="">
-							<span class="question">
-								Gender
-							</span>
 							<div class="grid-container-2">
 								<div>
-									<input id="gender_1__ID" name="Gender" type="radio" value="Male" required>
-									<label class="rd_btn width_65" for="gender_1__ID">Male</label>
-									<br>
-									<input id="gender_2__ID" name="Gender" type="radio" value="Female">
-									<label class="rd_btn width_65" for="gender_2__ID">Female</label>
-									<br>
-									<input id="gender_3__ID" name="Gender" type="radio" value="Other">
-									<label class="rd_btn width_65" for="gender_3__ID">Other</label>
+									<label><span class="question">Access Code</span>
+										<input type=text name="Access_Code" class="formcontrol" />
+									</label>
 								</div>
-								<div><label><span class="question">DOB</span>
-										<input type=date name="DOB" class=formcontrol />
+								<div>
+									<label><span class="question">Notes</span>
+										<textarea name="Notes" class="formcontrol  width_80"></textarea>
 									</label>
 								</div>
 							</div>

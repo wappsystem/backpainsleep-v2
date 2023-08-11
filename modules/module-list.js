@@ -13,7 +13,7 @@
     m[p+"contact-data"]      ={url:H+"/form-grid/survey/contact-data.html",Table:"sleepback-contact",form_module:"contact-form",router:1,taskname:"Contact details" };
     m[p+"contact-form"]      ={url:H+"/form-grid/survey/contact-form.html",Table:"sleepback-contact"};
     
-    m[p+"participant-data"] ={url:H+"/form-grid/participant/participant-data.html",Table:"participant-sleepback"
+    m[p+"participant-data"] ={url:H+"/form-grid/participant/participant-data.html",Table:"sleepback-contact"
                             ,form_module:"participant-form",
                             child_panel:"panel-child",
                             online_questionnaire_bl:"oq-bl",
@@ -22,7 +22,7 @@
                             participant_export:"ID,Subject_ID,Screening_Number,Randomisation_Number,Subject_Initials,Gender,DOB",
                             task_name:"Participants Data",
     };                   
-    m[p+"participant-form"] ={url:H+"/form-grid/participant/participant-form.html",Table:"participant-sleepback",task_name:"Participant's Details"};
+    m[p+"participant-form"] ={url:H+"/form-grid/participant/participant-form.html",Table:"sleepback-contact",task_name:"Participant's Details"};
     m[p+"notes-data"]       ={url:H+"/form-grid/backend/notes-data.html",Table:"notes-sleepback",form_module:"notes-form"},
     m[p+"notes-form"]       ={url:H+"/form-grid/backend/notes-form.html",Table:"notes-sleepback"},
 
@@ -37,6 +37,15 @@
     m[p+"randomisation-table-form"]=		{url:H+"/form-grid/backend/randomisation-table-form.html",Table:"randomisation-table-sleepback",task_name:"Randomisation Table"},
     m[p+"access-code-data"] ={url:H+"/form-grid/backend/access-code-data.html",Table:"access-code-sleepback",form_module:"access-code-form", task_name:"Access Code" };
     m[p+"access-code-form"] ={url:H+"/form-grid/backend/access-code-form.html",Table:"access-code-sleepback", task_name:"Access Code" };
+
+    m[p+"progress-new-form"]      ={url:H+"/form-grid/backend/progress-new-form.html",   Table:"progress-sleepback",task_name:"Progress form"};
+    m[p+"progress-mod-form"]      ={url:H+"/form-grid/backend/progress-mod-form.html",   Table:"progress-sleepback",task_name:"Progress form"};
+ 
+    m[p+"start-date"]      ={url:H+"/form-grid/backend/date-start-form.html",   Table:"progress-sleepback", task_name:"Start Date"};
+    m[p+"send-email-control-data"]      ={url:H+"/form-grid/backend/send-email-control-data.html",   Table:"progress-sleepback"};
+    m[p+"send-email-treatment-data"]      ={url:H+"/form-grid/backend/send-email-treatment-data.html",   Table:"progress-sleepback"};
+    m[p+"send-email"]      ={url:H+"/form-grid/backend/send-email-form.html",   Table:"progress-sleepback", task_name:"send email"};
+    m[p+"fitbit-sent"]      ={url:H+"/form-grid/backend/fitbit-sent-form.html",   Table:"progress-sleepback", task_name:"Date - Fitbit Sent"};
 
     m[p+"demographics-bl-data"]               ={url:H+"/form-grid/backend/demographics-data.html",Table:"demographics-bl-sleepback",form_module:"demographics-bl-form",task_name:"Baseline - Demographics"};
     m[p+"demographics-bl-form"]               ={url:H+"/form-grid/backend/demographics-form.html",Table:"demographics-bl-sleepback",task_name:"Baseline - Demographics"};
