@@ -60,7 +60,9 @@
                         });
                         break;
                     case '_Login_ID':
-                        td.html(records[I].UID+"-"+records[I].Data.Subject_Initials);
+                        var rand=records[I].Data.Randomisation_Number;
+                        if(rand==undefined || rand=='') td.html('');
+                        else td.html(records[I].UID+"-"+rand);
                         break;
                 }
             }
