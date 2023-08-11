@@ -44,7 +44,7 @@
           /*VmInclude:__HOST__/assets/js/shared-form.js*/
           //-------------------------------------
           var group=""
-          var access_code=""
+          var Access_Code=""
           m.default_load = m.load;
             m.load = function () {
                 console.log("send email: "+JSON.stringify(m.input.record))
@@ -55,7 +55,7 @@
 				$('#title__ID').text(m.input.title)
                 $('#F__ID input[name=Participant_uid]').val(m.input.record.Data.Participant)
                 group=m.input.record.Data.group;
-                access_code=m.input.record.Data.access_code;
+                Access_Code=m.input.record.Data.Access_Code;
             }
             //-------------------------------------
 			var before_submit = m.before_submit;
@@ -250,9 +250,9 @@
                         }
                     break;
                     case 'ac_email':
-                        //$vm.alert('Send Access code and link to Sleepfix: '+ data.access_code)
+                        //$vm.alert('Send Access code and link to Sleepfix: '+ data.Access_Code)
                         if(group=='Digital sleep health education'){
-                            //$vm.alert('Send Access code and link to Sleepfix: '+ data.access_code)
+                            //$vm.alert('Send Access code and link to Sleepfix: '+ data.Access_Code)
                             url='https://prod-00.australiasoutheast.logic.azure.com:443/workflows/468e2288856c4c6798737c5e03ae1ccd/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=02dlZ_6CNOuvZoEmYwNNaBvxyNzVT3H1l5yZV4w1sRA'
                             sms_url='https://prod-21.australiasoutheast.logic.azure.com:443/workflows/06d77eb489714acfb9c7ea477902f4e8/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Lx-FiE6fdvEpWZ99NRe5UBMEDPp9Y3yCLRbUPxPg6bc'
                         }
@@ -268,7 +268,7 @@
 				param.push(data.email); //0
 				param.push(data.first_name); //1
 				param.push(q_url); //2
-				param.push(data.access_code); //3
+				param.push(data.Access_Code); //3
 				param.push(data.phone) //4
 				param.push(data.contact) //5
 				param.push(url) //6

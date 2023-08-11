@@ -9,12 +9,12 @@
             //-------------------------------------
             $('#title__ID').text('Participants');            
             //-------------------------------------
-            var fields="_Participant_ID|Participant,group,first_name,last_name,phone,email,contact,Notes - added in Particpants form|Notes,access_code,bl,Start_Date,w0_email,w3_email,w5_email,w8_email,w8,w8_rem_1,w8_rem_2,w16_email,w16,w16_rem_1,w16_rem_2,w26_email,w26,w26_rem_1,w26_rem_2,ac_email";
+            var fields="_Participant_ID|Participant,Group,first_name,last_name,phone,email,contact,Notes - added in Particpants form|Notes,Access_Code,bl,Start_Date,w0_email,w3_email,w5_email,w8_email,w8,w8_rem_1,w8_rem_2,w16_email,w16,w16_rem_1,w16_rem_2,w26_email,w26,w26_rem_1,w26_rem_2,ac_email";
             m.fields=""+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
             var today;
             m.load=function(){
-                m.query={"Data.group": {"$eq" : "Digital sleep health education"}}
+                m.query={"Data.Group": {"$eq" : "Digital sleep health education"}}
                 today = new Date();
             }
 
@@ -36,7 +36,7 @@
                         }
                         td.html(html);
                             td.find('u').on('click',function(){
-                                $vm.load_module_v2('start-date','',{record:records[I],group:'control'})
+                                $vm.load_module_v2('start-date','',{record:records[I],Group:'control'})
                             })
                     break;
                     case 'bl':

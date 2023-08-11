@@ -60,7 +60,7 @@
                     var t=JSON.parse(res.result.token.split('|')[0]);
                     sessionStorage.setItem("username",res.result.user_name);
                     sessionStorage.setItem("displayname",res.result.displayname);
-                    sessionStorage.setItem("group",t.groups);
+                    sessionStorage.setItem("Group",t.groups);
                     sessionStorage.setItem("vm_token",res.result.token);
                 }
             }
