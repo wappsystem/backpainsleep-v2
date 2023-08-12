@@ -267,12 +267,45 @@
       /*VmInclude: '__COMPONENT__/f/form.01.js'*/
       /*VmInclude: '__HOST__/assets/js/shared-form.js'*/
       //-------------------------------------
+      var load2 = m.load;
+      m.load = function () {
+        load2();
+        $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
+        if ($('#F__ID input[name="LBP_med_use"]:checked').val() == '0') {
+          $('#F__ID #LBP_med_use_option__ID').show();
+        }
+        else {
+          $('#F__ID #LBP_med_use_option__ID').hide();
+        }
+        if ($('#F__ID input[name="Sleep_med_use"]:checked').val() == '0') {
+          $('#F__ID #Sleep_med_use_option__ID').show();
+        }
+        else {
+          $('#F__ID #Sleep_med_use_option__ID').hide();
+        }
+      }
+      //-------------------------------------
+      $('#F__ID input[name="LBP_med_use"]').on('change', function () {
+        if ($('#F__ID input[name=LBP_med_use]:checked').val() == '0') {
+          $('#F__ID #LBP_med_use_option__ID').show();
+        }
+        else {
+          $('#F__ID #LBP_med_use_option__ID').hide();
+        }
+      });
+      $('#F__ID input[name="Sleep_med_use"]').on('change', function () {
+        if ($('#F__ID input[name=Sleep_med_use]:checked').val() == '0') {
+          $('#F__ID #Sleep_med_use_option__ID').show();
+        }
+        else {
+          $('#F__ID #Sleep_med_use_option__ID').hide();
+        }
+      });
+      //---------------------------------------
       m.after_insert = function (data,index) {
           var P_record=$vm.vm['__ID'].input.participant_record;
-          var tp=$vm.module_list[$vm.vm['__ID'].name].timepoint;
-          console.log("tp: "+tp)
-          if (m.prefix == undefined) { $vm.load_module('progress-new-form', '', {participant_record:P_record,progress:'demogr.',time:tp}); }
-          else {$vm.load_module(m.prefix + 'progress-new-form', '', {participant_record:P_record,progress:'demogr.',time:tp});}
+          if (m.prefix == undefined) { $vm.load_module('progress-new-form', '', {participant_record:P_record,progress:'10',time:'bl'}); }
+          else {$vm.load_module(m.prefix + 'progress-new-form', '', {participant_record:P_record,progress:'10',time:'bl'});}
       }
       //-------------------------------------
 

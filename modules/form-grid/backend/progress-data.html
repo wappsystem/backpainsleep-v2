@@ -1,15 +1,17 @@
 <div id=D__ID>
     <div>
-        VmInclude:__COMPONENT__/g/grid.01.html
-    </div>
+            <!--VmInclude:__HOST__/assets/html/grid.01.html-->
+        </div>
     <script>
         function F__ID(){
             //-------------------------------------
-            VmInclude:__COMPONENT__/g/grid.01.js       
+            VmInclude:'__HOST__/assets/js/grid.01.js'
             //-------------------------------------
-            $('#title__ID').text('Participants');            
+            $('#title__ID').text('Progress of Baseline Questionnaire');            
             //-------------------------------------
-            var fields="_Participant_ID,Group,first_name,last_name,phone,email,contact";
+            //-------------------------------------
+            var fields="_Participant_ID|Participant,name,telephone,email,cont_pref,Notes - added in Particpants form|Notes,BL_Sent,Baseline";
+            //var fields="_Participant_ID,Group,name,telephone,email,cont_pref,Access_Code";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
             m.load=function(){
@@ -18,15 +20,15 @@
             }
             m.cell_render=function(records,I,field,td,set_value,source){
                 switch(field){
-                    case 'DOB':
-                        if(records[I].Data.DOB!=''){
-                            var dob=(records[I].Data.DOB).split('-');
-                            td.html(dob[2]+'/'+dob[1]+'/'+dob[0]);
-                        }
-                        break;
                     case '_Participant_ID':
                         td.html(records[I].UID);
                         break;
+                    case 'cont_pref':
+                        if (records[I].Data.cont_pref==0) td.html('Email');
+                        if (records[I].Data.cont_pref==1) td.html('Text');
+                        if (records[I].Data.cont_pref==2) td.html('Both');
+                        break;
+
                 }
             }
             //-------------------------------------
@@ -66,6 +68,7 @@
         }
     </script>
     <style>
-        /*VmInclude:__COMPONENT__/g/grid.01.css*/
+        /*VmInclude:__HOST__/assets/css/grid.css*/
+        /*VmInclude:__HOST__/assets/css/wapp-form.css*/
     </style>
 </div>

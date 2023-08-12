@@ -9,7 +9,7 @@
             //-------------------------------------
             $('#title__ID').text('Participants');            
             //-------------------------------------
-            var fields="_Participant_ID,Randomisation_Number,Group,name,telephone,email,cont_pref,Access_Code|Access_Code,Notes,_Data_Entry,_Baseline,_Follow_up,_Login_ID,_Password";
+            var fields="_Participant_ID,Randomisation_Number,Group,name,telephone,email,_Baseline_link,BL_Sent,cont_pref,Access_Code|Access_Code,Notes,_Data_Entry,_Baseline,_Follow_up,_Login_ID,_Password";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
             m.cell_render=function(records,I,field,td,set_value,source){
@@ -42,7 +42,7 @@
                             var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
                             var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
                             var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"-"+records[I].Data.Subject_Initials+"&password="+records[I].Data._Password;
+                            var u="?username="+records[I].UID+"-"+records[I].UID+"&password="+records[I].Data._Password;
                             var q_url=$vm.module_list[m.online_questionnaire_bl].url+u+db+d+p;
     						window.open(q_url);
                         });
@@ -54,15 +54,42 @@
                             var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
                             var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
                             var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
-                            var u="?username="+records[I].UID+"-"+records[I].Data.Subject_Initials+"&password="+records[I].Data._Password;
+                            var u="?username="+records[I].UID+"-"+records[I].UID+"&password="+records[I].Data._Password;
                             var q_url=$vm.module_list[m.online_questionnaire_fu].url+u+db+d+p;
     						window.open(q_url);
                         });
                         break;
                     case '_Login_ID':
-                        var rand=records[I].Data.Randomisation_Number;
-                        if(rand==undefined || rand=='') td.html('');
-                        else td.html(records[I].UID+"-"+rand);
+                        var rand=records[I].UID;
+                        td.html(records[I].UID+"-"+rand);
+                        break;
+                    case 'cont_pref':
+                        if (records[I].Data.cont_pref==0) td.html('Email');
+                        if (records[I].Data.cont_pref==1) td.html('Text');
+                        if (records[I].Data.cont_pref==2) td.html('Both');
+                        break;
+                    case '_Baseline_link':
+                            var db=""; if(window.location.toString().indexOf('tb=demo')!=-1) db="&tb=demo";
+                            var d="";  if(window.location.toString().indexOf('_d=1')!=-1) d="&_d=1";
+                            var p="";  if(window.location.toString().indexOf('_p=1')!=-1) p="&_p=1";
+                            var u="?username="+records[I].UID+"-"+records[I].UID+"&password="+records[I].Data._Password;
+                            var q_url=$vm.module_list[m.online_questionnaire_bl].url+u+db+d+p;
+                        td.html(q_url);
+                        break;
+                    case 'BL_Sent':
+                        var s=records[I].Data.BL_Sent
+                        if(s!='' && s!=null && s!=undefined){
+                            s=s.substring(0,10);
+                            var dt1=$vm.date_yyyymmdd_parse(s);
+                            html="<u style='cursor:pointer'>"+$vm.yyyymmdd_to_ddmmyyyy($vm.date_to_string_yyyymmdd(dt1))+"</u>";
+                        }
+                        else {
+                            html="<u style='cursor:pointer'>BL Sent</u>"
+                        }
+                        td.html(html);
+                            td.find('u').on('click',function(){
+                                $vm.load_module_v2('participant-form','',{record:records[I],sent:'Sent'})
+                            })
                         break;
                 }
             }

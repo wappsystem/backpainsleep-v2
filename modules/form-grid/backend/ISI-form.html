@@ -267,6 +267,30 @@
         data.ISI_total=parseInt(data.ISI_1)+parseInt(data.ISI_2)+parseInt(data.ISI_3)+parseInt(data.ISI_4)+parseInt(data.ISI_5)+parseInt(data.ISI_6)+parseInt(data.ISI_7)
         return before_submit(data, index);
       }
+      //-------------------------------------
+      m.after_insert = function (data,index) {
+          var tp=$vm.module_list[$vm.vm['__ID'].name].timepoint;
+          var records={};
+          jQuery.ajaxSetup({async:false});
+          $vm.request({cmd:"find-s",table:$vm.module_list['progress-mod-form'].Table,options:{}},function(res){
+              if(res.permission==false){
+                  alert("No permission");
+                  return;
+              }
+              if(res.result.length==0){
+              }
+              else{
+                  if(tp=='bl') res.result[0].Data.Baseline='ISI';
+                  else if(tp=='fu') res.result[0].Data.Week_6='ISI';
+                  records=res.result[0]
+              }
+          })
+          if (m.prefix == undefined) { $vm.load_module('progress-mod-form', '', {record:records,progress:'ISI',time:tp,goback:1}); }
+          else {$vm.load_module(m.prefix + 'progress-mod-form', '', {record:records,progress:'ISI',time:tp,goback:1});}
+          jQuery.ajaxSetup({async:true});
+      }
+      //-------------------------------------
+
     }
   </script>
   <style>

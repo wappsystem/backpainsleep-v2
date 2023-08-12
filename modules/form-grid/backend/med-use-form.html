@@ -98,6 +98,29 @@
           $('#F__ID #Sleep_med_use_option__ID').hide();
         }
       });
+      //-------------------------------------
+      m.after_insert = function (data,index) {
+          var tp=$vm.module_list[$vm.vm['__ID'].name].timepoint;
+          var records={};
+          jQuery.ajaxSetup({async:false});
+          $vm.request({cmd:"find-s",table:$vm.module_list['progress-mod-form'].Table,options:{}},function(res){
+              if(res.permission==false){
+                  alert("No permission");
+                  return;
+              }
+              if(res.result.length==0){
+              }
+              else{
+                  if(tp=='bl') res.result[0].Data.Baseline='Med use';
+                  else if(tp=='fu') res.result[0].Data.Week_6='Med use';
+                  records=res.result[0]
+              }
+          })
+          if (m.prefix == undefined) { $vm.load_module('progress-mod-form', '', {record:records,progress:'Med use',time:tp,goback:1}); }
+          else {$vm.load_module(m.prefix + 'progress-mod-form', '', {record:records,progress:'Med use',time:tp,goback:1});}
+          jQuery.ajaxSetup({async:true});
+      }
+      //-------------------------------------
 
       //-------------------------------------
     }  

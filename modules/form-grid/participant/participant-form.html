@@ -47,45 +47,59 @@
 						</div>
 					</fieldset>
 				</div>
-				<div class="formgroup">
-					<div class="questiongroup ">
+				<div id="full_page__ID">
+					<div class="formgroup">
+						<div class="questiongroup ">
+							<fieldset class="">
+								<div class="grid-container-2">
+									<div>
+										<label><span class="question">Access Code</span>
+											<input type=text name="Access_Code" class="formcontrol" />
+										</label>
+									</div>
+									<div>
+										<label><span class="question">Notes</span>
+											<textarea name="Notes" class="formcontrol  width_80"></textarea>
+										</label>
+									</div>
+								</div>
+							</fieldset>
+						</div>
+					</div>
+					<div class="formgroup">
 						<fieldset class="">
 							<div class="grid-container-2">
-								<div>
-									<label><span class="question">Access Code</span>
-										<input type=text name="Access_Code" class="formcontrol" />
+								<div><label><span class="question">Password</span>
+										<input type=text name="_Password" class=formcontrol style="width:90%" />
 									</label>
 								</div>
-								<div>
-									<label><span class="question">Notes</span>
-										<textarea name="Notes" class="formcontrol  width_80"></textarea>
+								<div><label><span class="question">Group</span>
+										<input type=text name="Group" class=formcontrol  style="width:90%" readonly />
 									</label>
+								</div>
+							</div>
+							<div id="randomisation_div__ID">
+								<div class="grid-container-2">
+									<div><label><span class="question">Randomisation Number</span>
+											<input type=text name="Randomisation_Number" class=formcontrol readonly
+												placeholder='click here to randomise' style="width:90%" />
+										</label>
+									</div>
+									<div><label><span class="question">Randomised by</span>
+											<input type=text name="Randomised_by" class=formcontrol readonly style="width:90%" />
+										</label>
+									</div>
 								</div>
 							</div>
 						</fieldset>
 					</div>
 				</div>
-				<div class="formgroup">
+				<div class="formgroup" id="sent_date__ID">
 					<fieldset class="">
-						<div class="grid-container-2">
-							<div><label><span class="question">Password</span>
-									<input type=text name="_Password" class=formcontrol style="width:90%" />
-								</label>
-							</div>
-							<div><label><span class="question">Group</span>
-									<input type=text name="Group" class=formcontrol  style="width:90%" readonly />
-								</label>
-							</div>
-						</div>
-						<div id="randomisation_div__ID">
-							<div class="grid-container-2">
-								<div><label><span class="question">Randomisation Number</span>
-										<input type=text name="Randomisation_Number" class=formcontrol readonly
-											placeholder='click here to randomise' style="width:90%" />
-									</label>
-								</div>
-								<div><label><span class="question">Randomised by</span>
-										<input type=text name="Randomised_by" class=formcontrol readonly style="width:90%" />
+						<div >
+							<div class="grid-container-1">
+								<div><label><span class="question">Baseline questioonaire link sent</span>
+										<input type=date name="BL_Sent" id="bl_sent__ID" class=formcontrol style="width:90%" />
 									</label>
 								</div>
 							</div>
@@ -111,12 +125,38 @@
 				if (m.input.record == undefined) {
 					$('.row_participant__ID').hide()
 					$('#F__ID input[name=_Password').val($vm.vm_password(8, false));
+					$('#sent_date__ID').hide()
 				}
 				else {
 					$('.row_participant__ID').show()
 					$('#record__ID').val(m.input.record.UID)
+					console.log(m.input.sent)
+					if(m.input.sent==undefined) {
+						$('#sent_date__ID').hide();
+						$('#full_page__ID').show();
+					}
+					else {
+						$('#full_page__ID').hide();
+						if($('#F__ID input[name=BL_Sent').val()==undefined || $('#F__ID input[name=BL_Sent').val()=='') $('#bl_sent__ID').val(get_now_date())
+					}
 				}
 			}
+			//-------------------------------------
+			var get_now_date = function () {
+                var today = new Date();
+                var dd = today.getDate();
+                var mm = today.getMonth() + 1; //January is 0!
+                var yyyy = today.getFullYear();
+                var hh = today.getHours()
+                var mn = today.getMinutes()
+                var ss = today.getSeconds()
+                if (dd < 10) { dd = '0' + dd; }
+                if (mm < 10) { mm = '0' + mm; }
+                if (mn < 10) { mn = '0' + mn; }
+                if (hh < 10) { hh = '0' + hh; }
+                if (ss < 10) { ss = '0' + ss; }
+                return yyyy + '-' + mm + '-' + dd;
+            }
 			//-------------------------------------
 			$('#F__ID input[name=Randomisation_Number]').on('click', function () {
 				var I1 = $('#F__ID input[name=Randomisation_Number').val();
