@@ -28,6 +28,10 @@
                         if (records[I].Data.cont_pref==1) td.html('Text');
                         if (records[I].Data.cont_pref==2) td.html('Both');
                         break;
+                    case 'BL_Sent':
+                        var s=records[I].Data["BL_Sent"]
+                        td.html($vm.yyyymmdd_to_ddmmyyyy(s))
+                    break;
 
                 }
             }

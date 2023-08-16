@@ -5,13 +5,13 @@
 		<div class="formbox">
 			<!-- form start -->
 			<form id="F__ID">
-				<span id=title__ID>Start Date</span>
+				<span id=title__ID>Access Code Sent</span>
 				<div class="formgroup" id="sent_date__ID">
 					<fieldset class="">
 						<div >
 							<div class="grid-container-1">
-								<div><label><span class="question">Start Date</span>
-										<input type=date name="Start_Date" id="start_date__ID" class=formcontrol style="width:90%" />
+								<div><label><span class="question">Access Code Sent</span>
+										<input type=date name="AC_Sent" id="access_code_sent__ID" class=formcontrol style="width:90%" />
 									</label>
 								</div>
 							</div>
@@ -34,8 +34,8 @@
             m.load = function () {
                 m.default_load();
                 console.log("start_date: "+JSON.stringify(m.input.record))
-				if($('#start_date__ID').val()=="" || $('#start_date__ID').val()==undefined){
-					$('#start_date__ID').val(get_now_date())
+				if($('#access_code_sent__ID').val()=="" || $('#access_code_sent__ID').val()==undefined){
+					$('#access_code_sent__ID').val(get_now_date())
 				}
 				$('#title__ID').text(m.input.title)
                 record=m.input.record;

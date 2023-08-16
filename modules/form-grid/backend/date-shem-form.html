@@ -5,13 +5,37 @@
 		<div class="formbox">
 			<!-- form start -->
 			<form id="F__ID">
-				<span id=title__ID>Start Date</span>
-				<div class="formgroup" id="sent_date__ID">
+				<span id=title__ID>Sleep Health Module</span>
+				<div class="formgroup" id="SLEm_1__ID" style="display: none">
 					<fieldset class="">
 						<div >
 							<div class="grid-container-1">
-								<div><label><span class="question">Start Date</span>
-										<input type=date name="Start_Date" id="start_date__ID" class=formcontrol style="width:90%" />
+								<div><label><span class="question">Sleep Health Module 1</span>
+										<input type=date name="w0_SHEM_1" id="shem_1__ID" class=formcontrol style="width:90%" />
+									</label>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="formgroup" id="SLEm_2__ID" style="display: none">
+					<fieldset class="">
+						<div >
+							<div class="grid-container-1">
+								<div><label><span class="question">Sleep Health Module 2</span>
+										<input type=date name="w3_SHEM_2" id="shem_2__ID" class=formcontrol style="width:90%" />
+									</label>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="formgroup" id="SLEm_3__ID" style="display: none">
+					<fieldset class="">
+						<div >
+							<div class="grid-container-1">
+								<div><label><span class="question">Sleep Health Module 3</span>
+										<input type=date name="w5_SHEM_3" id="shem_3__ID" class=formcontrol style="width:90%" />
 									</label>
 								</div>
 							</div>
@@ -33,9 +57,27 @@
             m.default_load = m.load;
             m.load = function () {
                 m.default_load();
-                console.log("start_date: "+JSON.stringify(m.input.record))
-				if($('#start_date__ID').val()=="" || $('#start_date__ID').val()==undefined){
-					$('#start_date__ID').val(get_now_date())
+                console.log("start_date: "+JSON.stringify(m.input.timepoint))
+				$('#SLEm_1__ID').hide();
+				$('#SLEm_2__ID').hide();
+				$('#SLEm_3__ID').hide();
+				if(m.input.timepoint=='w0_shem_1') {
+					$('#SLEm_1__ID').show();
+					if($('#shem_1__ID').val()=="" || $('#shem_1__ID').val()==undefined){
+						$('#shem_1__ID').val(get_now_date())
+					}
+				}
+				else if(m.input.timepoint=='w3_shem_2') {
+					$('#SLEm_2__ID').show();
+					if($('#shem_2__ID').val()=="" || $('#shem_2__ID').val()==undefined){
+						$('#shem_2__ID').val(get_now_date())
+					}
+				}
+				else if(m.input.timepoint=='w5_shem_3') {
+					$('#SLEm_2__ID').show();
+					if($('#shem_3__ID').val()=="" || $('#shem_3__ID').val()==undefined){
+						$('#shem_3__ID').val(get_now_date())
+					}
 				}
 				$('#title__ID').text(m.input.title)
                 record=m.input.record;

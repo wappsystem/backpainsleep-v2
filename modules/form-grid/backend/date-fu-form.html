@@ -5,13 +5,37 @@
 		<div class="formbox">
 			<!-- form start -->
 			<form id="F__ID">
-				<span id=title__ID>Start Date</span>
-				<div class="formgroup" id="sent_date__ID">
+				<span id=title__ID>Follow up</span>
+				<div class="formgroup" id="W6_fu__ID" style="display: none">
 					<fieldset class="">
 						<div >
 							<div class="grid-container-1">
-								<div><label><span class="question">Start Date</span>
-										<input type=date name="Start_Date" id="start_date__ID" class=formcontrol style="width:90%" />
+								<div><label><span class="question">Follow up</span>
+										<input type=date name="w6_FU" id="w6_fu__ID" class=formcontrol style="width:90%" />
+									</label>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="formgroup" id="W6_fu_rem1__ID" style="display: none">
+					<fieldset class="">
+						<div >
+							<div class="grid-container-1">
+								<div><label><span class="question">Follow up Reminder 1</span>
+										<input type=date name="w6_rem_1" id="w6_fu_rem1__ID" class=formcontrol style="width:90%" />
+									</label>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
+				<div class="formgroup" id="W6_fu_rem2__ID" style="display: none">
+					<fieldset class="">
+						<div >
+							<div class="grid-container-1">
+								<div><label><span class="question">Follow up Reminder 2</span>
+										<input type=date name="w6_rem_2" id="w6_fu_rem2__ID" class=formcontrol style="width:90%" />
 									</label>
 								</div>
 							</div>
@@ -33,9 +57,27 @@
             m.default_load = m.load;
             m.load = function () {
                 m.default_load();
-                console.log("start_date: "+JSON.stringify(m.input.record))
-				if($('#start_date__ID').val()=="" || $('#start_date__ID').val()==undefined){
-					$('#start_date__ID').val(get_now_date())
+                console.log("start_date: "+JSON.stringify(m.input.timepoint))
+				$('#W6_fu__ID').hide();
+				$('#W6_fu_rem1__ID').hide();
+				$('#W6_fu_rem2__ID').hide();
+				if(m.input.timepoint=='W6_fu') {
+					$('#W6_fu__ID').show();
+					if($('#w6_fu__ID').val()=="" || $('#w6_fu__ID').val()==undefined){
+						$('#w6_fu__ID').val(get_now_date())
+					}
+				}
+				else if(m.input.timepoint=='w6_rem_1') {
+					$('#W6_fu_rem1__ID').show();
+					if($('#w6_fu_rem1__ID').val()=="" || $('#w6_fu_rem1__ID').val()==undefined){
+						$('#w6_fu_rem1__ID').val(get_now_date())
+					}
+				}
+				else if(m.input.timepoint=='w6_rem_2') {
+					$('#W6_fu_rem2__ID').show();
+					if($('#w6_fu_rem2__ID').val()=="" || $('#w6_fu_rem2__ID').val()==undefined){
+						$('#w6_fu_rem2__ID').val(get_now_date())
+					}
 				}
 				$('#title__ID').text(m.input.title)
                 record=m.input.record;

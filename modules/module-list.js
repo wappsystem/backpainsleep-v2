@@ -49,6 +49,9 @@
     m[p+"serious-adverse-event-follow-up-form"] ={url:H+"/form-grid/unscheduled/serious-adverse-event-follow-up-form.html",Table:"serious-adverse-event-follow-up-sleepback", task_name:"Serious Adverse event follow-up" };
 
     m[p+"start-date"]      ={url:H+"/form-grid/backend/date-start-form.html",   Table:"progress-sleepback", task_name:"Start Date"};
+    m[p+"shem-data"]      ={url:H+"/form-grid/backend/date-shem-form.html",   Table:"progress-sleepback", task_name:"SHEM"};
+    m[p+"fu-data"]      ={url:H+"/form-grid/backend/date-fu-form.html",   Table:"progress-sleepback", task_name:"Follow Up"};
+    m[p+"ac-data"]      ={url:H+"/form-grid/backend/date-ac-form.html",   Table:"progress-sleepback", task_name:"Access Code Sent"};
     m[p+"progress-data"]      ={url:H+"/form-grid/backend/progress-data.html",   Table:"progress-sleepback"};
     m[p+"control-panel-data"]      ={url:H+"/form-grid/backend/control-panel-data.html",   Table:"progress-sleepback"};
     m[p+"randomisation-check-data"]      ={url:H+"/form-grid/backend/randomisation-check-data.html",   Table:"progress-sleepback"};
