@@ -173,12 +173,12 @@
             //-------------------------------------------
             m.after_update = function (data,index) {
                 if(timepoint=='bl'){
-                    if (m.prefix == undefined) { $vm.load_module('panel-oq-bl', '', {}); }
-                    else {$vm.load_module(m.prefix + 'panel-oq-bl', '', {});}
+                    if (m.prefix == undefined) { $vm.load_module('panel-oq-bl', '', {record:m.input.participant_record}); }
+                    else {$vm.load_module(m.prefix + 'panel-oq-bl', '', {record:m.input.participant_record});}
                 }
                 else{
-                    if (m.prefix == undefined) { $vm.load_module('panel-oq-fu', '', {}); }
-                    else {$vm.load_module(m.prefix + 'panel-oq-fu', '', {});}
+                    if (m.prefix == undefined) { $vm.load_module('panel-oq-fu', '', {record:m.input.participant_record}); }
+                    else {$vm.load_module(m.prefix + 'panel-oq-fu', '', {record:m.input.participant_record});}
                 }
             }
 

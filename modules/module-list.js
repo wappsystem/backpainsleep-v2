@@ -50,6 +50,8 @@
 
     m[p+"start-date"]      ={url:H+"/form-grid/backend/date-start-form.html",   Table:"progress-sleepback", task_name:"Start Date"};
     m[p+"progress-data"]      ={url:H+"/form-grid/backend/progress-data.html",   Table:"progress-sleepback"};
+    m[p+"control-panel-data"]      ={url:H+"/form-grid/backend/control-panel-data.html",   Table:"progress-sleepback"};
+    m[p+"randomisation-check-data"]      ={url:H+"/form-grid/backend/randomisation-check-data.html",   Table:"progress-sleepback"};
     m[p+"send-email-control-data"]      ={url:H+"/form-grid/backend/send-email-control-data.html",   Table:"progress-sleepback"};
     m[p+"send-email-treatment-data"]      ={url:H+"/form-grid/backend/send-email-treatment-data.html",   Table:"progress-sleepback"};
     m[p+"send-email"]      ={url:H+"/form-grid/backend/send-email-form.html",   Table:"progress-sleepback", task_name:"send email"};

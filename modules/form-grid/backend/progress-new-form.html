@@ -172,8 +172,8 @@
                 //console.log("W0: "+JSON.stringify(m.input.progress))
                 progress=m.input.progress
                 timing=m.input.time
-                console.log(JSON.stringify(m.input))
                 console.log("AAA: "+progress+" - "+timing)
+                console.log(JSON.stringify(m.input.participant_record))
                 $('#Participant__ID').val(m.input.participant_record.UID)
                 $('#F__ID input[name=Participant_uid]').val(m.input.participant_record.UID)
                 $('#F__ID input[name=name]').val(m.input.participant_record.Data.name)
@@ -190,7 +190,7 @@
             //-------------------------------------------
             m.after_insert = function (data,index) {
                 if (m.prefix == undefined) { $vm.load_module('panel-oq-bl', '', {}); }
-                else {$vm.load_module(m.prefix + 'panel-oq-bl', '', {});}
+                else {$vm.load_module(m.prefix + 'panel-oq-bl', '', {record:m.input.participant_record});}
             }
 
         }

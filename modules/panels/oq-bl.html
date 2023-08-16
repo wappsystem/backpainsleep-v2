@@ -35,10 +35,9 @@
 		//--------------------------------------------------------
 		$('#D__ID').on('show',function(){
             var record=$vm.vm['__ID'].input.record;
-			console.log('record')
-			console.log(record)
+			console.log('panel - record')			
 			id_list='demographics-bl-form,BPI-bl-form,PSQI-bl-form,PHQ-2-bl-form,GAD-7-bl-form,PBAS-bl-form,EQ-5D-bl-form,eHEALs-bl-form'
-			//id_list='PBAS-bl-form,PHQ-2-bl-form'
+			//id_list='demographics-bl-form,BPI-bl-form,eHEALs-bl-form'
             if(id_list==undefined){
                 alert("No questionnaire was found");
                 return;
@@ -111,6 +110,8 @@
 		            $li.html("<u style='cursor:pointer' m="+module+">"+task_name+"</u>");
 					$li.find('u').on('click',function(){
 		                var m=$(this).attr('m');
+						//console.log("loading")
+						//console.log(JSON.stringify($vm.vm['__ID'].input.record))
                         var record=$vm.vm['__ID'].input.record;
 						$vm.load_module(m,'',{participant_record:record,goback:1});
 		            });

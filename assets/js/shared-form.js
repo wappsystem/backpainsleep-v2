@@ -1,9 +1,6 @@
 //-------------------------------------
 var participant_name=function(record){ 
-    console.log(JSON.stringify(record))
-        if(record.Data.Randomisation_Number!=undefined && record.Data.Randomisation_Number!='') {console.log("A"); return record.Data.Randomisation_Number; }
-        else if(record.Data.Screening_Number!=undefined && record.Data.Screening_Number!='') {console.log("B"); return record.Data.Screening_Number; }
-        else return record.UID;}
+        return record.UID;}
 //-------------------------------------
 var query;
 //auto select particpant
@@ -13,9 +10,10 @@ var autocomplete_list_p=function(records){
     var items=[];
     for(var i=0;i<records.length;i++){
         var obj={};
-        if(records[i].Data.Randomisation_Number!= undefined  && records[i].Data.Randomisation_Number!='' ) obj.label=records[i].Data.Randomisation_Number;
-        else if(records[i].Data.Screening_Number!=undefined && records[i].Data.Screening_Number!='') obj.label=records[i].Data.Screening_Number;
-        else obj.label=records[i].UID;
+        //if(records[i].Data.Randomisation_Number!= undefined  && records[i].Data.Randomisation_Number!='' ) obj.label=records[i].Data.Randomisation_Number;
+        //else if(records[i].Data.Screening_Number!=undefined && records[i].Data.Screening_Number!='') obj.label=records[i].Data.Screening_Number;
+        //else 
+        obj.label=records[i].UID;
         obj['UID']=records[i].UID;
         items.push(obj);
     }
@@ -95,7 +93,7 @@ var status_of_data=function(data){
     var N1=0,N2=0;
     for(key in data){
         if(key!="" && key!="Participant" && key!="Participant_uid" && key!="sysStatus" && key!="_status" && key!="Modify_Reason" && key!="Modify_Reason_other"){
-            console.log(key+',')//+' - '+ data[key]);
+            //console.log(key+',')//+' - '+ data[key]);
             N2++;
             if(data[key]=='') N1++;
         }

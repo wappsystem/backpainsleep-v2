@@ -269,6 +269,7 @@
       }
       //-------------------------------------
       m.after_insert = function (data,index) {
+        var P_record=$vm.vm['__ID'].input.participant_record;
           var tp=$vm.module_list[$vm.vm['__ID'].name].timepoint;
           var records={};
           jQuery.ajaxSetup({async:false});
@@ -285,8 +286,8 @@
                   records=res.result[0]
               }
           })
-          if (m.prefix == undefined) { $vm.load_module('progress-mod-form', '', {record:records,progress:'ISI',time:tp,goback:1}); }
-          else {$vm.load_module(m.prefix + 'progress-mod-form', '', {record:records,progress:'ISI',time:tp,goback:1});}
+          if (m.prefix == undefined) { $vm.load_module('progress-mod-form', '', {record:records,progress:'ISI',time:tp,goback:1,participant_record:P_record}); }
+          else {$vm.load_module(m.prefix + 'progress-mod-form', '', {record:records,progress:'ISI',time:tp,goback:1,participant_record:P_record});}
           jQuery.ajaxSetup({async:true});
       }
       //-------------------------------------

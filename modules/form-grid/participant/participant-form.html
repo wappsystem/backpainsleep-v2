@@ -119,6 +119,7 @@
 			//-------------------------------------
             var rand_num='';
 			var load = m.load;
+			var part_uid;
 			m.load = function () {
 				load();
                 rand_num='';
@@ -208,6 +209,49 @@
                 }
 			}
 			//-------------------------------------
+			m.after_update = function (data,index) {
+                console.log('Data: '+JSON.stringify(data));
+                console.log(JSON.stringify(m.input.record.UID))
+                var pid=(m.input.record.UID).toString();
+                var record={};
+                var tb = $vm.module_list["progress-mod-form"].Table;
+                query={'Data.Participant':pid}
+                //console.log(query);
+                jQuery.ajaxSetup({async:false});
+                $vm.request({ cmd: "find", table: tb,query:query, limit:1 }, function (res) {
+                    if(res.permission==false){
+                        alert("No permission");
+                        return;
+                    }
+                    if(res.result.length==0){
+                    }
+                    else{
+                        record=res.result[0]
+                        record.Data.Group=data.Group;
+                        //record.Data.Start_date=index.result.I2;
+                        record.Data.Access_Code=data.Access_Code;
+                        record.Data.Notes=data.Notes;
+                        //console.log(JSON.stringify(record))
+                        $vm.request({cmd:'update',id:record._id,table:tb,data:record.Data},function(res){
+                            //-----------------------------
+                            if(res.status=="lk"){
+                                $vm.alert("This record is locked.");
+                                return;
+                            }
+                            //-----------------------------
+                            if(res.status=="np"){
+                                alert("No permission to update this record.");
+                                return;
+                            }
+                        })
+                    }
+                })
+                jQuery.ajaxSetup({async:true});
+                $vm.refresh=1;
+                m.change_status++;
+                window.history.go(-1);   
+            }
+
 
 		}
 	</script>
