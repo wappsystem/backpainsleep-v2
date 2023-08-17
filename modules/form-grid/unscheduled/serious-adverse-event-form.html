@@ -25,11 +25,18 @@
                     </div>
                 </div>
                 <div class="formgroup">
-                    <div class="questiongroup ">
-                        <fieldset class="">
-                            <label style="width:100%"><span class="">Investigator</span>
-                                <input type=text class="form-control" name="Investigator" placeholder="">
-                            </label>
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-2">
+                            <div>
+                                <label><span class="question">SAE number</span>
+                                    <input class="formcontrol" type="number" name="SAE_No">
+                                </label>
+                            </div>
+                            <div>
+                                <label><span class="question">Details</span>
+                                    <textarea class="formcontrol" style="width:90%" name="Details" placeholder=""></textarea>
+                                </label>
+                            </div>
                         </fieldset>
                     </div>
                 </div>
@@ -37,222 +44,123 @@
                     <div class="questiongroup">
                         <fieldset class="grid-container-2">
                             <div>
-                                <label><span class="question">1. SAE onset date</span>
-                                    <input class="formcontrol" type="date" name="SAE_onset_date">
+                                <label><span class="question">Onset Date</span>
+                                    <input class="formcontrol" type="date" name="Onset_Date">
                                 </label>
                             </div>
                             <div>
-                                <label><span class="question">2. SAE stop date</span>
-                                    <input class="formcontrol" type="date" name="SAE_stop_date">
+                                <label><span class="question">Name of study drug/device</span>
+                                    <input type=text name="Tx" class=formcontrol />
                                 </label>
                             </div>
                         </fieldset>
                     </div>
                 </div>
-
-                            <div class="form-group">
-                                <div class="questiongroup">
-                                   <label><span>3. Brief description of participant with no personal identifiers:</span></label>
-                                        <fieldset class="subquestions">
-                                        <label><span class="">Sex </span>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="SAE" value="M">
-                                                <span class="checkmark"></span>M</label>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="SAE" value="F">
-                                                <span class="checkmark"></span>F</label>
-                                            </label><br>
-                                            <label ><span class="">Age</span>
-                                                <input type=number name="Age" class=form-control />
-                                            </label>
-                                    </fieldset>
-                                    <fieldset class=""><label><span>Diagnosis for study participation: Obstructive sleep apnoea, CPAP intolerant, upper airway surgery</span></label></fieldset>
-                                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-2">
+                            <div>
+                                <label><span class="question">Date of the FIRST administration of Investigational Product|</span>
+                                    <input class="formcontrol" type="date" name="Date_First_Administration">
+                                </label>
                             </div>
-                            <div class="form-group">
-                                <div class="questiongroup ">
-                                    <fieldset class="">
-                                        <label style="width:100%"><span class="">4. Brief description of the nature of the serious adverse event (attach description if more space is needed): </span>
-                                            <textarea class="form-control" name="Description" placeholder=""></textarea>
-                                        </label><br>
-                                    </fieldset>
-                                </div>
+                            <div>
+                                <label><span class="question">Date of the LAST administration of Investigational Product|</span>
+                                    <input class="formcontrol" type="date" name="Date_Last_Administration">
+                                </label>
                             </div>
-                            <div class="form-group">
-                                <div class="questiongroup">
-                                   <label><span>5. Category of the serious adverse event:</span></label>
-                                    <fieldset class="">
-                                        <label><span class="">
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Category" value="Death">
-                                                <span class="checkmark"></span>Death
-                                            </label>
-                                                <label ><span class=""></span>
-                                                    <input type=date name="Death_date" class=form-control />
-                                                </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Category" value="Life threatening">
-                                                <span class="checkmark"></span>Life threatening
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Category" value="Hospitalisation">
-                                                <span class="checkmark"></span>Hospitalisation – initial or prolonged
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Category" value="Disability/ incapacity">
-                                                <span class="checkmark"></span>Disability/ incapacity
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Category" value="Required intervention">
-                                                <span class="checkmark"></span>Required intervention to prevent
-                                                permanent impairment
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Category" value="Other">
-                                                <span class="checkmark"></span>Other
-                                            </label><br>
-                                            <label ><span class="">Other Details</span>
-                                                <input type=text name="Other_details" class=form-control />
-                                            </label>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="questiongroup">
-                                    <label><span>6. Severity of serious adverse event:</span></label>
-                                    <fieldset class="">
-                                        <label><span class="">
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Severity" value="Mild">
-                                                <span class="checkmark"></span>Mild
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Severity" value="Moderate">
-                                                <span class="checkmark"></span>Moderate
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Severity" value="Severe">
-                                                <span class="checkmark"></span>Severe
-                                            </label><br>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="questiongroup">
-                                    <label><span>7. Relationship of event to intervention:</span></label>
-                                    <fieldset class="">
-                                        <label><span class="">
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Relationship" value="Unrelated">
-                                                <span class="checkmark"></span>Unrelated (clearly not related to the intervention)
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Relationship" value="Possible">
-                                                <span class="checkmark"></span>Possible (may be related to intervention)
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Relationship" value="Probable">
-                                                <span class="checkmark"></span>Probable (likely to be related to intervention)
-                                            </label><br>
-                                            <label class="radiobuttons ">
-                                                <input type="radio" name="Relationship" value="Definite">
-                                                <span class="checkmark"></span>Definite (clearly related to intervention)
-                                            </label><br>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="questiongroup">
-                                    <label>8. Was study intervention discontinued due to event? </label>
-                                    <fieldset class="">
-                                        <label class="radiobuttons ">
-                                            <input type="radio" name="Study_intervention_discontinued" value="Yes">
-                                            <span class="checkmark"></span>Yes</label>
-                                        <label class="radiobuttons ">
-                                            <input type="radio" name="Study_intervention_discontinued" value="No">
-                                            <span class="checkmark"></span>No</label>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="questiongroup ">
-                                    <fieldset class="">
-                                        <label style="width:100%"><span class="">9. What medications or other steps were taken to treat the serious adverse event?</span>
-                                            <textarea class="form-control" name="Medications" placeholder=""></textarea>
-                                        </label><br>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="questiongroup ">
-                                    <fieldset class="">
-                                        <label style="width:100%"><span class="">10. List any relevant tests, laboratory data, and history, including pre-existing medical conditions:</span>
-                                            <textarea class="form-control" name="Relevant_tests" placeholder=""></textarea>
-                                        </label><br>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="questiongroup">
-                                    <label>11. Type of report: </label>
-                                    <fieldset class="">
-                                        <label class="radiobuttons ">
-                                            <input type="radio" name="Report_Type" value="Initial">
-                                            <span class="checkmark"></span>Initial
-                                        </label>
-                                        <label class="radiobuttons ">
-                                            <input type="radio" name="Report_Type" value="Follow-up">
-                                            <span class="checkmark"></span>Follow-up
-                                        </label>
-                                        <label class="radiobuttons ">
-                                                <input type="radio" name="Report_Type" value="Final">
-                                         <span class="checkmark"></span>Final
-                                        </label>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
-                            <div class="form-group">
-                                <div class="questiongroup p-2" style='background-color:indianred' >
-                                    <label>A Serious Adverse Event Report must be submitted to the Southern Adelaide Clinical Human Research
-                                        Ethics Committee via the Office for Research within 72 hours of the event becoming known to the local
-                                        investigator, and CC’d to Woll and Syd governances if it concerns that site.</label>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <div class="" >
-                                    <label><span style='font-size:1.0rem!important'>Office for Research SAHLN:<br></span>
-                                        (08) 8204 6453<br>
-                                        Health.SALHNOfficeforResearch@sa.gov.au<br>
-                                    </label><br>
-                                    <label><span style='font-size:1.0rem!important'>NSLHD (Sydney) governance:<br></span>
-                                        (02) 9926 4589<br>
-                                        NSLHD-Research@health.nsw.gov.au<br>
-                                    </label><br>
-                                    <label><span style='font-size:1.0rem!important'>Illawarra Shoalhaven LHD (Woll) governance:<br></span>
-                                        (02) 4253 4876 (Kristy Pierce, Research Governance Officer)<br>
-                                        Kristy.Pierce@sesiahs.health.nsw.gov.au<br>
-                                    </label><br>
-                                    <label><span style='font-size:1.0rem!important'>Perth site: <br></span>
-                                        Please report SAE to the SCG and OPHC
-                                        ethics committee and forward all documents and
-                                        acknowledgements to the trial manager for
-                                        notification to the overseeing SALHN HREC.
-                                    </label><br>
-                                </div>
-                            </div>
-                        </form>
+                        </fieldset>
                     </div>
                 </div>
-            </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-1">
+                            <div>
+                                <label><span class="question">Realtionship to study</span>
+                                    <select name="Realtionship" class=formcontrol>
+                                        <option></option>
+                                        <option>Not Related</option>
+                                        <option>Possibly Related</option>
+                                        <option>Related</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-2">
+                            <div>
+                                <label><span class="question">In Case of Hospitalisation (Date of Admission)</span>
+                                    <input class="formcontrol" type="date" name="Hospitalisation">
+                                </label><br>
+                            </div>
+                            <div>
+                                <label><span class="question">In Case of Death autopsy report</span></label>
+                                <div class="formcontrol">
+                                    <u style='cursor:pointer' id=link_File_Name__ID></u>
+                                    <br>
+                                    <input type="file" name=File_Name style="margin-top:6px" /> <button type="button" id=x_File_Name__ID>Remove</button>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-1">
+                            <div>
+                                <label><span class="question">Corrective Treatment/Therapy</span>
+                                    <textarea  style="width:90%" class="formcontrol" name="Corrective_Tx" placeholder=""></textarea>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-1">
+                            <div>
+                                <label><span class="question">Previous Concom Medications</span>
+                                    <textarea  style="width:90%" class="formcontrol" name="Previous_Concom_Meds" placeholder=""></textarea>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-1">
+                            <div>
+                                <label><span class="question">Action</span>
+                                    <textarea  style="width:90%" class="formcontrol" name="Action" placeholder=""></textarea>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-1">
+                            <div>
+                                <label><span class="question">Comments</span>
+                                    <textarea  style="width:90%" class="formcontrol" name="Comments" placeholder=""></textarea>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                VmInclude: __HOST__/assets/html/modification_status.html
+            </form>
         </div>
     </div>
     VmInclude:__COMPONENT__/m/modal.01.html
     <script>
         function F__ID(){
             //-------------------------------------
-            /*VmInclude:__COMPONENT__/f/form.01.js*/
-            /*VmInclude:__HOST__/assets/js/shared-form.js*/
+            /*VmInclude: '__HOST__/assets/js/form.01.js'*/
+            /*VmInclude: '__HOST__/assets/js/shared-form.js'*/
             //-------------------------------------
             m.old_load=m.load;
             m.load=function(){
@@ -263,10 +171,6 @@
         }
     </script>
     <style>
-        #D__ID .mt-95 {
-        max-width:600px;
-    }
-        /*VmInclude:__HOST__/assets/css/wappsystem-form.css*/
-        /*VmInclude:__HOST__/assets/css/style.css*/
+        /*VmInclude:__HOST__/assets/css/wapp-form.css*/
     </style>
 </div>
