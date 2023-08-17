@@ -78,6 +78,11 @@
                     </div>
                 </div>
                 <div class='row px-4'>
+                    <div class="col-sm-12 col-lg-3 row_participant__ID">
+                        <label class=''><span class=''>Password</span>
+                            <input type=text class=form-control name=_Password readonly>
+                        </label>
+                    </div>
                 </div>
                 <div class='row px-4'>
                 </div>
@@ -107,8 +112,8 @@
                 //console.log("W0: "+JSON.stringify(m.input.progress))
                 progress=m.input.progress
                 timing=m.input.time
-                console.log("AAA: "+progress+" - "+timing)
-                console.log(JSON.stringify(m.input.participant_record))
+                //console.log("AAA: "+progress+" - "+timing)
+                //console.log(JSON.stringify(m.input.participant_record))
                 $('#Participant__ID').val(m.input.participant_record.UID)
                 $('#F__ID input[name=Participant_uid]').val(m.input.participant_record.UID)
                 $('#F__ID input[name=name]').val(m.input.participant_record.Data.name)
@@ -118,6 +123,7 @@
                 $('#F__ID input[name=cont_pref]').val(m.input.participant_record.Data.cont_pref)
                 $('#F__ID input[name=Access_Code]').val(m.input.participant_record.Data.Access_Code)
                 $('#F__ID input[name=BL_Sent]').val(m.input.participant_record.Data.BL_Sent)
+                $('#F__ID input[name=_Password]').val(m.input.participant_record.Data._Password)
                 if(m.input.time=='bl') $('#F__ID input[name=Baseline]').val(m.input.progress)
                 else if(m.input.time=='fu') $('#F__ID input[name=Week_6]').val(m.input.progress)
 				$('#submit__ID').click();

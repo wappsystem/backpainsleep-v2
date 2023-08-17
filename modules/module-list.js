@@ -22,7 +22,7 @@
                             online_questionnaire_w3:"oq-w3",
                             participant_id:{field1:"Subject_ID",field2:"Subject_Initials"},
                             participant_export:"ID,Subject_ID,Screening_Number,Randomisation_Number,Subject_Initials,Gender,DOB",
-                            task_name:"Participants Data",
+                            task_name:"Participants Data",router:1
     };                   
     m[p+"participant-form"] ={url:H+"/form-grid/participant/participant-form.html",Table:"sleepback-contact",task_name:"Participant's Details"};
     m[p+"notes-data"]       ={url:H+"/form-grid/backend/notes-data.html",Table:"notes-sleepback",form_module:"notes-form"},
@@ -32,6 +32,10 @@
     m[p+"oq-fu"] ={url:I+"/oq-fu.html"};
     m[p+"oq-w1"] ={url:I+"/oq-w1.html"};
     m[p+"oq-w3"] ={url:I+"/oq-w3.html"};
+    m[p+"shm1-w0"] ={url:I+"/nfuo.html"},
+    m[p+"shm2-w1"] ={url:I+"/ktpa.html"},
+    m[p+"shm3-w2"] ={url:I+"/jvqs.html"},
+
     
     m[p+"panel-main"]=    	        {url:H+"/panels/main.html",router:1,task_name:"Study Panel"};
     m[p+"panel-child"]=              {url:H+"/panels/child.html",task_name:"Data Entry"};
@@ -59,8 +63,8 @@
     m[p+"fu-data"]      ={url:H+"/form-grid/backend/date-fu-form.html",   Table:"progress-sleepback", task_name:"Follow Up"};
     m[p+"ac-data"]      ={url:H+"/form-grid/backend/date-ac-form.html",   Table:"progress-sleepback", task_name:"Access Code Sent"};
     m[p+"ae-data"]      ={url:H+"/form-grid/backend/date-ae-form.html",   Table:"progress-sleepback", task_name:"Adverse Event Check-in"};
-    m[p+"progress-data"]      ={url:H+"/form-grid/backend/progress-data.html",   Table:"progress-sleepback"};
-    m[p+"control-panel-data"]      ={url:H+"/form-grid/backend/control-panel-data.html",   Table:"progress-sleepback"};
+    m[p+"progress-data"]      ={url:H+"/form-grid/backend/progress-data.html",   Table:"progress-sleepback",router:1};
+    m[p+"control-panel-data"]      ={url:H+"/form-grid/backend/control-panel-data.html",   Table:"progress-sleepback",router:1};
     m[p+"randomisation-check-data"]      ={url:H+"/form-grid/backend/randomisation-check-data.html",   Table:"progress-sleepback"};
     m[p+"send-email-control-data"]      ={url:H+"/form-grid/backend/send-email-control-data.html",   Table:"progress-sleepback"};
     m[p+"send-email-treatment-data"]      ={url:H+"/form-grid/backend/send-email-treatment-data.html",   Table:"progress-sleepback"};

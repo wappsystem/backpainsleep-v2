@@ -157,7 +157,7 @@ m.cell_process=function(){
                     alert('Can not find "'+m.form_module+'" in the module list');
                     return;
                 }
-                console.log("load_module: "+JSON.stringify(m.input.record))
+                //console.log("load_module: "+JSON.stringify(m.input.record))
                 $vm.load_module(prefix+m.form_module,$vm.root_layout_content_slot,{record:m.records[I],participant_record:m.input.record});
             })
         }
@@ -238,7 +238,7 @@ m.export_records=function(){
     var req={cmd:"export",table:m.Table,query:m.query,I1:m.I1,search:$('#keyword__ID').val()}
     open_model__ID();
     $vm.request(req,function(N,i,txt){
-        console.log(i+"/"+N);
+        //console.log(i+"/"+N);
         $('#msg__ID').text((100*i/N).toFixed(0)+"%");
         if(i==-1){
             var len=txt.length;

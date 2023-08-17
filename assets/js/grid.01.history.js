@@ -45,7 +45,7 @@ m.request_data_h=function(){
     else if(m.cmd_t=='p1') f_cmd_h='find-p1';
     else if(m.cmd_t=='p2') f_cmd_h='find-p2';
     else if(m.cmd_t=='table') f_cmd_h='find-table';
-    console.log("AAA: "+f_cmd_h)
+    //console.log("AAA: "+f_cmd_h)
     $vm.request({cmd:f_cmd_h,table:m.Table,I1:m.I1,query:m.query,sort:m.sort,projection:m.projection,search:$('#keyword__ID').val(),skip:skip,limit:limit},function(res){
         var mt2=new Date().getTime();
         var tt_all=mt2-mt1;

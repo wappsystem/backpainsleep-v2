@@ -422,18 +422,18 @@
             $('.EQ_5D_6__ID').on('click', function () {
                 $('#indicator__ID').show()
                 var x0 = $('.EQ_5D_6__ID').offset().top;
-                console.log("X0: "+x0)
+                //console.log("X0: "+x0)
                 var x1 = event.pageY
-                console.log("X1: "+x1)
+                //console.log("X1: "+x1)
                 dx = x1 - x0 - 2;
                 //alert(x1+'-'+x0+' '+dx)
-                console.log("DX: "+dx)
+                //console.log("DX: "+dx)
                 if (dx < 57) dx = 57;
                 if (dx > 357) dx = 357;
                 $('#indicator__ID').css('margin-top', dx.toString() + 'px');
                 var pos = ((300 - (dx - 57)) * 100 / 300).toFixed(0);
                 position = pos;
-                console.log("POS: "+pos)
+                //console.log("POS: "+pos)
                 $('#D__ID input[name="EQ_5D_6"]').val(pos);
             })
             //-------------------------------------

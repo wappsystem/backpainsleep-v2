@@ -131,7 +131,7 @@
 				else {
 					$('.row_participant__ID').show()
 					$('#record__ID').val(m.input.record.UID)
-					console.log(m.input.sent)
+					//console.log(m.input.sent)
 					if(m.input.sent==undefined) {
 						$('#sent_date__ID').hide();
 						$('#full_page__ID').show();
@@ -210,8 +210,8 @@
 			}
 			//-------------------------------------
 			m.after_update = function (data,index) {
-                console.log('Data: '+JSON.stringify(data));
-                console.log(JSON.stringify(m.input.record.UID))
+                //console.log('Data: '+JSON.stringify(data));
+                //console.log(JSON.stringify(m.input.record.UID))
                 var pid=(m.input.record.UID).toString();
                 var record={};
                 var tb = $vm.module_list["progress-mod-form"].Table;

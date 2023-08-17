@@ -6,6 +6,18 @@
 			<!-- form start -->
 			<form id="F__ID">
 				<span id=title__ID>Follow up</span>
+				<div class="formgroup" >
+					<fieldset class="">
+						<div >
+							<div class="grid-container-1">
+								<div><label><span class="question">Questionnaire Link</span>
+										<p  id=q_link__ID style="width:90%" ></p>
+									</label>
+								</div>
+							</div>
+						</div>
+					</fieldset>
+				</div>
 				<div class="formgroup" id="W6_fu__ID" style="display: none">
 					<fieldset class="">
 						<div >
@@ -57,7 +69,7 @@
             m.default_load = m.load;
             m.load = function () {
                 m.default_load();
-                console.log("start_date: "+JSON.stringify(m.input.timepoint))
+                //console.log("start_date: "+JSON.stringify(m.input.timepoint))
 				$('#W6_fu__ID').hide();
 				$('#W6_fu_rem1__ID').hide();
 				$('#W6_fu_rem2__ID').hide();
@@ -81,7 +93,8 @@
 				}
 				$('#title__ID').text(m.input.title)
                 record=m.input.record;
-
+				//console.log(m.input.link)
+				$('#q_link__ID').html(m.input.link);
             }
             var get_now_date = function () {
                 var today = new Date();

@@ -234,7 +234,7 @@ $('#delete__ID').on('click', function(){
 $('#copy__ID').on('click',function(){
     if($vm.copy_paste==undefined) $vm.copy_paste={}
     $vm.copy_paste['__ID']={Data:$vm.serialize('#F__ID')};
-    console.log($vm.copy_paste['__ID'])
+    //console.log($vm.copy_paste['__ID'])
 })
 //---------------------------------------------
 $('#paste__ID').on('click',function(){
@@ -252,7 +252,7 @@ $('#header__ID').on('click', function(event){
             var nm=x.elements[i].getAttribute("name");
             if(nm!=null && nm!=nm0){ if(txt!="") txt+=", "; txt+=nm; nm0=nm;}
         }
-        console.log(txt);
+        //console.log(txt);
     }
 });
 //--------------------------------------------------------

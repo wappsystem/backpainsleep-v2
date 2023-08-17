@@ -69,12 +69,12 @@ m.load=function(){
 }
 //-------------------------------------
 m.before_submit=function(data){
-    console.log("before submit")
+    //console.log("before submit")
     if ($("#F__ID input[name=Participant]").val()=='' || $("#F__ID input[name=Participant_uid]").val()==''){
         $vm.alert("Please select a participant. Make sure Participant ID has a number.") 
         return false;    
     }
-    console.log("BBBB: "+$("#F__ID input[name=_status]:checked").val())
+    //console.log("BBBB: "+$("#F__ID input[name=_status]:checked").val())
     if($("#F__ID input[name=_status]:checked").val()=='' || $("#F__ID input[name=_status]:checked").val()==undefined)
         data.sysStatus=status_of_data(data);
     else data.sysStatus=$("#F__ID input[name=_status]:checked").val();
@@ -179,7 +179,7 @@ var status_of_data=function(data){
     var N1=0,N2=0;
     for(key in data){
         if(key!="" && key!="Participant" && key!="Participant_uid" && key!="sysStatus" && key!="_status"){
-            console.log(key+' - '+ data[key]);
+            //console.log(key+' - '+ data[key]);
             N2++;
             if(data[key]=='') N1++;
         }

@@ -130,6 +130,28 @@
                 </div>
                 <div class='row px-4'>
                     <div class="col-sm-12 col-lg-3 row_participant__ID">
+                        <label class=''><span class=''>AE1</span>
+                            <input type=text class=form-control name=AE1 readonly>
+                        </label>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 row_participant__ID">
+                        <label class=''><span class=''>AE2</span>
+                            <input type=text class=form-control name=AE2 readonly>
+                        </label>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 row_participant__ID">
+                        <label class=''><span class=''>AE 1</span>
+                            <input type=text class=form-control name=AE_1 readonly>
+                        </label>
+                    </div>
+                    <div class="col-sm-12 col-lg-3 row_participant__ID">
+                        <label class=''><span class=''>AE 2</span>
+                            <input type=text class=form-control name=AE_2 readonly>
+                        </label>
+                    </div>
+                </div>
+                <div class='row px-4'>
+                    <div class="col-sm-12 col-lg-3 row_participant__ID">
                         <label class=''><span class=''>ac email</span>
                             <input type=date class=form-control name=ac_email readonly>
                         </label>
@@ -163,9 +185,17 @@
                     if (m.prefix == undefined) { $vm.load_module('panel-oq-bl', '', {record:m.input.participant_record}); }
                     else {$vm.load_module(m.prefix + 'panel-oq-bl', '', {record:m.input.participant_record});}
                 }
-                else{
+                else if (timepoint=='fu') {
                     if (m.prefix == undefined) { $vm.load_module('panel-oq-fu', '', {record:m.input.participant_record}); }
                     else {$vm.load_module(m.prefix + 'panel-oq-fu', '', {record:m.input.participant_record});}
+                }
+                else if (timepoint=='w1') {
+                    if (m.prefix == undefined) { $vm.load_module('panel-oq-w1', '', {record:m.input.participant_record}); }
+                    else {$vm.load_module(m.prefix + 'panel-oq-w1', '', {record:m.input.participant_record});}
+                }
+                else if (timepoint=='w3') {
+                    if (m.prefix == undefined) { $vm.load_module('panel-oq-w3', '', {record:m.input.participant_record}); }
+                    else {$vm.load_module(m.prefix + 'panel-oq-w3', '', {record:m.input.participant_record});}
                 }
             }
 

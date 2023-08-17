@@ -53,13 +53,13 @@
                         //Order by m.fields
                         var fields_ex=m.fields.replace("_Participant_ID","ID").replace("Randomisation_Number|I1","Randomisation_Number")
                         var export_fields=fields_ex.split(',');
-                        console.log(export_fields);
+                        //console.log(export_fields);
                         //console.log(participant_rec);
                         export_fields=export_fields.slice(1,export_fields.length-8);
                         export_fields.push("_Password");
                         export_fields.push("_Login_ID");
                         export_fields.push("Submitted_by");
-                        console.log(export_fields);
+                        //console.log(export_fields);
                         var oo=JSON.parse(JSON.stringify(participant_rec,export_fields));
                         var tmp=JSON.stringify(oo).replace(/\bID\b/g,"Participant ID")
                         oo=JSON.parse(tmp);

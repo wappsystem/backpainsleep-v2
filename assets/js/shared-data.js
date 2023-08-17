@@ -33,14 +33,14 @@ m.export_records=function(){
             var len=txt.length;
             n_txt="["+txt.substring(5,len-9)+"]";
             participant_rec=JSON.parse(n_txt);
-            console.log(JSON.stringify(participant_rec))
+            //console.log(JSON.stringify(participant_rec))
             //$vm.download_csv(m.Table+".csv",o);
             close_model__ID();
             m.Table=tabledata;
             var req={cmd:"export",table:m.Table,I1:m.I1,search:$('#keyword__ID').val()}
             open_model__ID();
             $vm.request(req,function(N,i,txt){
-                console.log("B"+i+"/"+N);
+                //console.log("B"+i+"/"+N);
                 $('#msg__ID').text((100*i/N).toFixed(0)+"%");
                 if(i==-1){
                     var len=txt.length;

@@ -270,7 +270,7 @@
       m.after_insert = function (data,index) {
           var P_record=$vm.vm['__ID'].input.participant_record;
           var tp=$vm.module_list[$vm.vm['__ID'].name].timepoint;
-          console.log("tp: "+tp)
+          //console.log("tp: "+tp)
           if (m.prefix == undefined) { $vm.load_module('progress-new-form', '', {participant_record:P_record,progress:'demogr.',time:tp}); }
           else {$vm.load_module(m.prefix + 'progress-new-form', '', {participant_record:P_record,progress:'demogr.',time:tp});}
       }

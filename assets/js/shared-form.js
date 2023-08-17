@@ -41,14 +41,14 @@ m.load=function(){
     //--------------------------
     if(m.input!=undefined && m.input.participant_record!=undefined){
         //new from child panel
-        console.log('New from child panel')
+        //console.log('New from child panel')
         $("#F__ID input[name=Participant]").val(participant_name(m.input.participant_record));
         $("#F__ID input[name=Participant_uid]").val(m.input.participant_record.UID);
         //$('#modify_reason_div__ID').css('display','none');
         //$('#modify_reason__ID').removeAttr('required');
     }
     else if(m.input!=undefined && m.input.record!=undefined){
-        console.log('Modify')
+        //console.log('Modify')
         //$('#modify_reason_div__ID').css('display','block')
         //$('#modify_reason__ID').attr('required', '');
         //$('#modify_reason__ID').val("");
@@ -56,7 +56,7 @@ m.load=function(){
         //modify
     }
     else{
-        console.log('New from main panel')
+        //console.log('New from main panel')
         //$('#modify_reason_div__ID').css('display','none');
         //$('#modify_reason__ID').removeAttr('required');
         //new with no parent

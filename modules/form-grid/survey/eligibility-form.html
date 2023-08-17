@@ -925,7 +925,7 @@
       }
       //---------------------------------------
       $('#F__ID button').on('click', function (event) {
-        console.log("Click")
+        //console.log("Click")
         var d = $(this).attr("d");
         d = parseInt(d);
         if (d < 0) show_section(current_I - 1);
@@ -939,7 +939,7 @@
       })
       //---------------------------------------
       var show_section = function (I) {
-        console.log("Show")
+        //console.log("Show")
         for (var i = 1; i <= N; i++) {
           $('#S' + i + "__ID").hide(); // remove/add '//' for Test mode/Production mode 
           $('#S' + i + "__ID * ").attr('disabled', 'disabled');
@@ -962,7 +962,7 @@
       var old_submit = m.submit;
       m.submit = function (event) {
         event.preventDefault();
-        console.log("Submit")
+        //console.log("Submit")
         if (current_I == 1) {
           if ($("input[name='LBP_3_month']:checked").val() == '1' ||
             $("input[name='pain']:checked").val() == '0' ||
