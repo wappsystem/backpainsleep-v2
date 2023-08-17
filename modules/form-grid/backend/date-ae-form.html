@@ -5,37 +5,25 @@
 		<div class="formbox">
 			<!-- form start -->
 			<form id="F__ID">
-				<span id=title__ID>Sleep Health Module</span>
-				<div class="formgroup" id="SLEm_1__ID" style="display: none">
+				<span id=title__ID>Adverse Event Checkup</span>
+				<div class="formgroup" id="AE1__ID" style="display: none">
 					<fieldset class="">
 						<div >
 							<div class="grid-container-1">
-								<div><label><span class="question">Sleep Health Module 1</span>
-										<input type=date name="SMOD1" id="shem_1__ID" class=formcontrol style="width:90%" />
+								<div><label><span class="question">Adverse Event Checkup week 1</span>
+										<input type=date name="AE1" id="ae1__ID" class=formcontrol style="width:90%" />
 									</label>
 								</div>
 							</div>
 						</div>
 					</fieldset>
 				</div>
-				<div class="formgroup" id="SLEm_2__ID" style="display: none">
+				<div class="formgroup" id="AE2__ID" style="display: none">
 					<fieldset class="">
 						<div >
 							<div class="grid-container-1">
-								<div><label><span class="question">Sleep Health Module 2</span>
-										<input type=date name="SMOD2" id="shem_2__ID" class=formcontrol style="width:90%" />
-									</label>
-								</div>
-							</div>
-						</div>
-					</fieldset>
-				</div>
-				<div class="formgroup" id="SLEm_3__ID" style="display: none">
-					<fieldset class="">
-						<div >
-							<div class="grid-container-1">
-								<div><label><span class="question">Sleep Health Module 3</span>
-										<input type=date name="SMOD3" id="shem_3__ID" class=formcontrol style="width:90%" />
+								<div><label><span class="question">Adverse Event Checkup week 3</span>
+										<input type=date name="AE2" id="ae2__ID" class=formcontrol style="width:90%" />
 									</label>
 								</div>
 							</div>
@@ -58,25 +46,18 @@
             m.load = function () {
                 m.default_load();
                 console.log("start_date: "+JSON.stringify(m.input.timepoint))
-				$('#SLEm_1__ID').hide();
-				$('#SLEm_2__ID').hide();
-				$('#SLEm_3__ID').hide();
-				if(m.input.timepoint=='w0_shem_1') {
-					$('#SLEm_1__ID').show();
-					if($('#shem_1__ID').val()=="" || $('#shem_1__ID').val()==undefined){
-						$('#shem_1__ID').val(get_now_date())
+				$('#AE1__ID').hide();
+				$('#AE2__ID').hide();
+				if(m.input.timepoint=='ae1') {
+					$('#AE1__ID').show();
+					if($('#ae1__ID').val()=="" || $('#ae1__ID').val()==undefined){
+						$('#ae1__ID').val(get_now_date())
 					}
 				}
-				else if(m.input.timepoint=='w3_shem_2') {
-					$('#SLEm_2__ID').show();
-					if($('#shem_2__ID').val()=="" || $('#shem_2__ID').val()==undefined){
-						$('#shem_2__ID').val(get_now_date())
-					}
-				}
-				else if(m.input.timepoint=='w5_shem_3') {
-					$('#SLEm_2__ID').show();
-					if($('#shem_3__ID').val()=="" || $('#shem_3__ID').val()==undefined){
-						$('#shem_3__ID').val(get_now_date())
+				else if(m.input.timepoint=='ae2') {
+					$('#AE2__ID').show();
+					if($('#ae2__ID').val()=="" || $('#ae2__ID').val()==undefined){
+						$('#ae2__ID').val(get_now_date())
 					}
 				}
 				$('#title__ID').text(m.input.title)

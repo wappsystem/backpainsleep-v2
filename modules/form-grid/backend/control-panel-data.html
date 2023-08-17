@@ -10,7 +10,7 @@
             $('#title__ID').text('Control Panel');            
             //-------------------------------------
             //var fields="_Participant_ID|Participant,group,first_name,last_name,phone,email,contact,Notes - added in Particpants form|Notes,access_code,bl,Start_Date,w0_email,w3_email,w5_email,w8_email,w8,w8_rem_1,w8_rem_2,w16_email,w16,w16_rem_1,w16_rem_2,w26_email,w26,w26_rem_1,w26_rem_2,ac_email";
-            var fields="_Participant_ID|Participant,name,telephone,email,cont_pref,Notes - added in Particpants form|Notes,Group,AC_sent,Start_Date,w0_SHEM_1,w3_SHEM_2,w5_SHEM_3,w6_FU,Week_6,w6_rem_1,w6_rem_2,AC_Sent";
+            var fields="_Participant_ID|Participant,name,telephone,email,cont_pref,Notes - added in Particpants form|Notes,Group,Start_Date,AE1,AE2,SMOD1,SMOD2,SMOD3,w6_FU,Week_6,w6_rem_1,w6_rem_2,AC_Sent";
             //var fields="_Participant_ID,Group,name,telephone,email,cont_pref,Access_Code";
             m.fields=""+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
@@ -46,17 +46,15 @@
                                 $vm.load_module_v2('start-date','',{record:records[I]})
                             })
                     break;
-                    case 'w0_SHEM_1':
-
+                    case 'SMOD1':
                         if(records[I].Data.Group=='Control'){
-                            console.log("BBBB")
                             var s=records[I].Data["Start_Date"]
                             if(s!='' && s!=null && s!=undefined){
                                 s=s.substring(0,10);
                                 var dt1=$vm.date_yyyymmdd_parse(s);
                                 var dt2=$vm.date_add_days(dt1,0);
                                 var color='';
-                                s=records[I].Data['w0_SHEM_1'];
+                                s=records[I].Data['SMOD1'];
                                 if(s!='' && s!=null && s!=undefined){
                                     html="<u style='cursor:pointer;color:black'>"+$vm.yyyymmdd_to_ddmmyyyy(s)+"</u>";
                                     html+=' <i style="color:green;font-weight: 900" class="far fa-check-circle"></i>';
@@ -73,15 +71,15 @@
                         }
                         else td.html("");
                     break;
-                    case 'w3_SHEM_2':
+                    case 'SMOD2':
                         if(records[I].Data.Group=='Control'){
                             var s=records[I].Data["Start_Date"]
                             if(s!='' && s!=null && s!=undefined){
                                 s=s.substring(0,10);
                                 var dt1=$vm.date_yyyymmdd_parse(s);
-                                var dt2=$vm.date_add_days(dt1,21);
+                                var dt2=$vm.date_add_days(dt1,7);
                                 var color='';
-                                s=records[I].Data['w3_SHEM_2'];
+                                s=records[I].Data['SMOD2'];
                                 if(s!='' && s!=null && s!=undefined){
                                     html="<u style='cursor:pointer;color:black'>"+$vm.yyyymmdd_to_ddmmyyyy(s)+"</u>";
                                     html+=' <i style="color:green;font-weight: 900" class="far fa-check-circle"></i>';
@@ -98,15 +96,15 @@
                         }
                         else td.html("");
                     break;
-                    case 'w5_SHEM_3':
+                    case 'SMOD3':
                         if(records[I].Data.Group=='Control'){
                             var s=records[I].Data["Start_Date"]
                             if(s!='' && s!=null && s!=undefined){
                                 s=s.substring(0,10);
                                 var dt1=$vm.date_yyyymmdd_parse(s);
-                                var dt2=$vm.date_add_days(dt1,35);
+                                var dt2=$vm.date_add_days(dt1,14);
                                 var color='';
-                                s=records[I].Data['w5_SHEM_3'];
+                                s=records[I].Data['SMOD3'];
                                 if(s!='' && s!=null && s!=undefined){
                                     html="<u style='cursor:pointer;color:black'>"+$vm.yyyymmdd_to_ddmmyyyy(s)+"</u>";
                                     html+=' <i style="color:green;font-weight: 900" class="far fa-check-circle"></i>';
@@ -203,6 +201,50 @@
                             td.find('u').on('click',function(){
                                 $vm.load_module_v2('ac-data','',{record:records[I]})
                             })
+                    break;
+                    case 'AE1':
+                        var s=records[I].Data["Start_Date"]
+                        if(s!='' && s!=null && s!=undefined){
+                            s=s.substring(0,10);
+                            var dt1=$vm.date_yyyymmdd_parse(s);
+                            var dt2=$vm.date_add_days(dt1,7);
+                            var color='';
+                            s=records[I].Data['AE1'];
+                            if(s!='' && s!=null && s!=undefined){
+                                html="<u style='cursor:pointer;color:black'>"+$vm.yyyymmdd_to_ddmmyyyy(s)+"</u>";
+                                html+=' <i style="color:green;font-weight: 900" class="far fa-check-circle"></i>';
+                            }
+                            else{
+                                if(dt2 > today) html="<u style='cursor:pointer;color:black'>"+$vm.yyyymmdd_to_ddmmyyyy($vm.date_to_string_yyyymmdd(dt2))+"</u>";
+                                else html="<u style='cursor:pointer;color:red'>"+$vm.yyyymmdd_to_ddmmyyyy($vm.date_to_string_yyyymmdd(dt2))+"</u>";
+                            }
+                            td.html(html);
+                            td.find('u').on('click',function(){
+                                $vm.load_module_v2('ae-data','',{record:records[I],timepoint:'ae1',title:'Adverse Event Checking week 1'})
+                            })
+                        }
+                    break;
+                    case 'AE2':
+                        var s=records[I].Data["Start_Date"]
+                        if(s!='' && s!=null && s!=undefined){
+                            s=s.substring(0,10);
+                            var dt1=$vm.date_yyyymmdd_parse(s);
+                            var dt2=$vm.date_add_days(dt1,21);
+                            var color='';
+                            s=records[I].Data['AE2'];
+                            if(s!='' && s!=null && s!=undefined){
+                                html="<u style='cursor:pointer;color:black'>"+$vm.yyyymmdd_to_ddmmyyyy(s)+"</u>";
+                                html+=' <i style="color:green;font-weight: 900" class="far fa-check-circle"></i>';
+                            }
+                            else{
+                                if(dt2 > today) html="<u style='cursor:pointer;color:black'>"+$vm.yyyymmdd_to_ddmmyyyy($vm.date_to_string_yyyymmdd(dt2))+"</u>";
+                                else html="<u style='cursor:pointer;color:red'>"+$vm.yyyymmdd_to_ddmmyyyy($vm.date_to_string_yyyymmdd(dt2))+"</u>";
+                            }
+                            td.html(html);
+                            td.find('u').on('click',function(){
+                                $vm.load_module_v2('ae-data','',{record:records[I],timepoint:'ae2',title:'Adverse Event Checking week 3'})
+                            })
+                        }
                     break;
 
                     }

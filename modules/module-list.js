@@ -18,6 +18,8 @@
                             child_panel:"panel-child",
                             online_questionnaire_bl:"oq-bl",
                             online_questionnaire_fu:"oq-fu",
+                            online_questionnaire_w1:"oq-w1",
+                            online_questionnaire_w3:"oq-w3",
                             participant_id:{field1:"Subject_ID",field2:"Subject_Initials"},
                             participant_export:"ID,Subject_ID,Screening_Number,Randomisation_Number,Subject_Initials,Gender,DOB",
                             task_name:"Participants Data",
@@ -28,11 +30,15 @@
 
     m[p+"oq-bl"] ={url:I+"/oq-bl.html"};
     m[p+"oq-fu"] ={url:I+"/oq-fu.html"};
+    m[p+"oq-w1"] ={url:I+"/oq-w1.html"};
+    m[p+"oq-w3"] ={url:I+"/oq-w3.html"};
     
     m[p+"panel-main"]=    	        {url:H+"/panels/main.html",router:1,task_name:"Study Panel"};
     m[p+"panel-child"]=              {url:H+"/panels/child.html",task_name:"Data Entry"};
     m[p+"panel-oq-bl"]=              {url:H+"/panels/oq-bl.html"};
     m[p+"panel-oq-fu"]=              {url:H+"/panels/oq-fu.html"};
+    m[p+"panel-oq-w1"]=              {url:H+"/panels/oq-w1.html"};
+    m[p+"panel-oq-w3"]=              {url:H+"/panels/oq-w3.html"};
     m[p+"randomisation-table-data"]=		{url:H+"/form-grid/backend/randomisation-table-data.html",Table:"randomisation-table-sleepback",form_module:"randomisation-table-form",task_name:"Randomisation Table"},
     m[p+"randomisation-table-form"]=		{url:H+"/form-grid/backend/randomisation-table-form.html",Table:"randomisation-table-sleepback",task_name:"Randomisation Table"},
     m[p+"access-code-data"] ={url:H+"/form-grid/backend/access-code-data.html",Table:"access-code-sleepback",form_module:"access-code-form", task_name:"Access Code" };
@@ -52,6 +58,7 @@
     m[p+"shem-data"]      ={url:H+"/form-grid/backend/date-shem-form.html",   Table:"progress-sleepback", task_name:"SHEM"};
     m[p+"fu-data"]      ={url:H+"/form-grid/backend/date-fu-form.html",   Table:"progress-sleepback", task_name:"Follow Up"};
     m[p+"ac-data"]      ={url:H+"/form-grid/backend/date-ac-form.html",   Table:"progress-sleepback", task_name:"Access Code Sent"};
+    m[p+"ae-data"]      ={url:H+"/form-grid/backend/date-ae-form.html",   Table:"progress-sleepback", task_name:"Adverse Event Check-in"};
     m[p+"progress-data"]      ={url:H+"/form-grid/backend/progress-data.html",   Table:"progress-sleepback"};
     m[p+"control-panel-data"]      ={url:H+"/form-grid/backend/control-panel-data.html",   Table:"progress-sleepback"};
     m[p+"randomisation-check-data"]      ={url:H+"/form-grid/backend/randomisation-check-data.html",   Table:"progress-sleepback"};
@@ -60,8 +67,12 @@
     m[p+"send-email"]      ={url:H+"/form-grid/backend/send-email-form.html",   Table:"progress-sleepback", task_name:"send email"};
     m[p+"fitbit-sent"]      ={url:H+"/form-grid/backend/fitbit-sent-form.html",   Table:"progress-sleepback", task_name:"Date - Fitbit Sent"};
 
-    m[p+"demographics-bl-data"]               ={url:H+"/form-grid/backend/demographics-data.html",Table:"demographics-bl-sleepback",form_module:"demographics-bl-form",task_name:"Baseline - Demographics"};
-    m[p+"demographics-bl-form"]               ={url:H+"/form-grid/backend/demographics-form.html",Table:"demographics-bl-sleepback",task_name:"Baseline - Demographics",timepoint:'bl'};
+    m[p+"AEC-w1-data"]               ={url:H+"/form-grid/backend/AEC-data.html",Table:"AEC-w1-sleepback",form_module:"AEC-w1-form",task_name:"Week 1 - Adverse Event Check-in"};
+    m[p+"AEC-w1-form"]               ={url:H+"/form-grid/backend/AEC-form.html",Table:"AEC-w1-sleepback",task_name:"Week 1 - Adverse Event Check-in",timepoint:'w1'};
+    m[p+"AEC-w3-data"]               ={url:H+"/form-grid/backend/AEC-data.html",Table:"AEC-w3-sleepback",form_module:"AEC-w3-form",task_name:"Week 3 - Adverse Event Check-in"};
+    m[p+"AEC-w3-form"]               ={url:H+"/form-grid/backend/AEC-form.html",Table:"AEC-w3-sleepback",task_name:"Week 3 - Adverse Event Check-in",timepoint:'w3'};
+    m[p+"demographics-bl-data"]      ={url:H+"/form-grid/backend/demographics-data.html",Table:"demographics-bl-sleepback",form_module:"demographics-bl-form",task_name:"Baseline - Demographics"};
+    m[p+"demographics-bl-form"]      ={url:H+"/form-grid/backend/demographics-form.html",Table:"demographics-bl-sleepback",task_name:"Baseline - Demographics",timepoint:'bl'};
     m[p+"BPI-bl-data"]               ={url:H+"/form-grid/backend/BPI-data.html",Table:"BPI-bl-sleepback",form_module:"BPI-bl-form",task_name:"Baseline - BPI"};
     m[p+"BPI-bl-form"]               ={url:H+"/form-grid/backend/BPI-form.html",Table:"BPI-bl-sleepback",task_name:"Baseline - BPI",timepoint:'bl'};
     m[p+"PSQI-bl-data"]               ={url:H+"/form-grid/backend/PSQI-data.html",Table:"PSQI-bl-sleepback",form_module:"PSQI-bl-form",task_name:"Baseline - PSQI"};
