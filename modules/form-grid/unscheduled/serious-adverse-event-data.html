@@ -1,13 +1,14 @@
 
-<section>
+section>
     VmInclude:__HOST__/assets/html/grid.01.html
 </section>
 <script>
-function F__ID(){
-//-------------------------------------
-/*VmInclude:__HOST__/assets/js/grid.01.multiple.js*/
-    //-------------------------------------
-        $('#title__ID').text('Serious Adverse Event')
+    function F__ID(){
+        //-------------------------------------
+        VmInclude:__HOST__/assets/js/grid.01.multiple.js
+        VmInclude:__HOST__/assets/js/shared-data.js
+        //-------------------------------------
+        $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
         //-------------------------------------
         var fields="Investigator,Location,SAE_onset_date,SAE_stop_date,SAE,Age,Description,Category,Death_date,Other_details,Severity,Relationship,Study_intervention_discontinued,Medications,Relevant_tests";
         m.fields="_Form,_Lock,_Status,_Notes,_Participant_ID,Participant,"+fields+",Submit_date,Submitted_by,_Delete";
@@ -25,5 +26,5 @@ function F__ID(){
     }
 </script>
 <style>
-        /*VmInclude:__HOST__/assets/css/grid.css*/
+    /*VmInclude:__HOST__/assets/css/grid.css*/
 </style>

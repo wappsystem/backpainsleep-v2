@@ -1,164 +1,194 @@
 <div id=D__ID>
-    <div class="bg-light">
-        <form id=F__ID>
-            <div id=quest1__ID style='max-width:800px;margin-left:auto;margin-right:auto;'>
+    <!--third html start -->
+    <div class="container mt-95">
+        <!-- form container start -->
+        <div class="formbox">
+            <!-- form start -->
+            <form id="F__ID">
+                <span id=title__ID></span>
+                <!-- participant name and study id -->
                 <div id="participant_div__ID">
-                    <div class="form-group box">
-                        <fieldset class="subquestions">
-                            <label><span class="">Participant</span>
-                                <input type=text name="Participant" class=form-control id=Participant__ID
-                                    data-id="Participant" />
-                            </label><br><br>
-                            <label><span class="">Participant ID</span>
-                                <input type=text name="Participant_uid" class=form-control readonly />
-                            </label><br>
+                    <div class="formgroup">
+                        <fieldset class="grid-container-2">
+                            <div>
+                                <label><span class="question">Participant</span>
+                                    <input type=text name="Participant" class=formcontrol id=Participant__ID
+                                        data-id="Participant" />
+                                </label>
+                            </div>
+                            <div>
+                                <label><span class="question">Participant ID</span>
+                                    <input type=text name="Participant_uid" class=formcontrol readonly />
+                                </label>
+                            </div>
                         </fieldset>
                     </div>
                 </div>
-                <div class="form-group box">
-                    <h2 id="title__ID"></h2>
+                <div class="formgroup">
+                    <div class="questiongroup ">
+                        <span class="question"></span>
+                        <fieldset class="grid-container-1">
+                            <div class="">
+                                <label><span class="question">Time Point</span><br>
+                                    <input id="Time_Point_1__ID" name="Time_Point" type="radio"
+                                        value="Pre-randomisation">
+                                    <label class="rd_btn" for="Time_Point_1__ID">Pre-randomisation</label>
+                                    <input id="Time_Point_2__ID" name="Time_Point" type="radio"
+                                        value="Post-randomisation">
+                                    <label class="rd_btn" for="Time_Point_2__ID">Post-randomisation</label>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
                 </div>
-                <!-- form group -->
-                            <!-- form group -->
-                            <div class="form-group box">
-                                <div class="questiongroup ">
-                                    <fieldset class="">
-                                        <label style="width:100%"><span class="">Adverse Event</span>
-                                            <input type=text class="form-control" name="Adverse_Event" placeholder="">
-                                        </label><br>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group box">
-                                <div class="questiongroup ">
-                                    <fieldset class="subquestions">
-                                        <label><span class="">Onset Time</span>
-                                            <input class="form-control" type="time" name="Onset_Time">
-                                        </label><br>
-                                        <label><span class="">Onset Date</span>
-                                            <input class="form-control" type="date" name="Onset_Date">
-                                        </label>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group box">
-                                <div class="questiongroup ">
-                                    <fieldset class="subquestions">
-                                        <label><span class="">Resolution Time</span>
-                                            <input class="form-control" type="time" name="Resolution_Time">
-                                        </label><br>
-                                        <label><span class="">Resolution Date</span>
-                                            <input class="form-control" type="date" name="Resolution_Date">
-                                        </label>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group box">
-                                <div class="questiongroup">
-                                    <fieldset class="subquestions">
-                                        <label><span class="">Was AE Serious?</span>
-                                            <select name="Serious_AE" class=form-control>
-                                                <option></option>
-                                                <option>Yes</option>
-                                                <option>No</option>
-                                            </select>
-                                        </label><br>
-                                        <label><span class="">Frequency</span>
-                                            <select name="Frequency" class=form-control>
-                                                <option></option>
-                                                <option>Single episode</option>
-                                                <option>Intermittent</option>
-                                                <option>Continuous</option>
-                                            </select>
-                                        </label><br>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group box">
-                                <div class="questiongroup">
-                                    <fieldset class="subquestions">
-                                        <label><span class="">Intensity</span>
-                                            <select name="Intensity" class=form-control>
-                                                <option></option>
-                                                <option>Mild</option>
-                                                <option>Moderate</option>
-                                                <option>Severe</option>
-                                            </select>
-                                        </label><br>
-                                        <label><span class="">Realtionship to study</span>
-                                            <select name="Realtionship" class=form-control>
-                                                <option></option>
-                                                <option>Not Related</option>
-                                                <option>Possibly Related</option>
-                                                <option>Related</option>
-                                            </select>
-                                        </label><br>
-                                        <label><span class="">Study Agent Action</span>
-                                            <select name="Study_Agent_Action" class=form-control>
-                                                <option></option>
-                                                <option>None</option>
-                                                <option>Dosage decrease</option>
-                                                <option>Interrupted</option>
-                                                <option>Patient withdrawn</option>
-                                                <option>Drug discontinued</option>
-                                                <option>Not applicable</option>
-                                            </select>
-                                        </label><br>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group box">
-                                <div class="questiongroup">
-                                    <fieldset class="subquestions">
-                                        <label><span class="">Treatment Required</span>
-                                            <select name="Treatment_Required" class=form-control>
-                                                <option></option>
-                                                <option>None</option>
-                                                <option>Concomitant Medication</option>
-                                                <option>Non-drug Tx</option>
-                                                <option>Hospitalization</option>
-                                                <option>Other (specify)</option>
-                                            </select>
-                                        </label><br>
-                                        <label><span class="">Other</span>
-                                            <input type=text name="Other_Treatment" class=form-control />
-                                        </label>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="form-group box">
-                                <div class="questiongroup">
-                                    <fieldset class="subquestions">
-                                        <label><span class="">Outcome</span>
-                                            <select name="Outcome" class=form-control>
-                                                <option></option>
-                                                <option>Resolved with no Sequelae</option>
-                                                <option>Resolved with Sequelae</option>
-                                                <option>Continuing</option>
-                                                <option>Fatal</option>
-                                                <option>Unknown</option>
-                                            </select>
-                                        </label><br>
-                                    </fieldset>
-                                </div>
-                            </div>
-                            <div class="box" style="text-align:right">
-                                <div class="box-item">
-                                    <button type="submit" id="submit__ID" class="btn btn-primary btn-lg">Submit</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+
+                <div class="formgroup">
+                    <div class="questiongroup ">
+                        <fieldset class="">
+                            <label class="fullwidth"><span class="question">Adverse Event</span>
+                                <input type=text name="Adverse_Event" class="formcontrol fullwidth" />
+                            </label>
+                        </fieldset>
+                    </div>
                 </div>
-            <script>
-                function F__ID() {
-                    //-------------------------------------
-                    /*VmInclude:__HOST__/assets/js/form.01.js*/
-                    //-------------------------------------
-                    
-                  }
-                  </script>
-              <style>
-                  /*VmInclude:__HOST__/assets/css/wapp-form.css*/
-                </style>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-2">
+                            <div>
+                                <label><span class="question">Onset Date</span>
+                                    <input class="formcontrol" type="date" name="Onset_Date">
+                                </label>
+                            </div>
+                            <div>
+                                <label><span class="question">Resolution Date</span>
+                                    <input class="formcontrol" type="date" name="Resolution_Date">
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-2">
+                            <div>
+                                <label><span class="question">Was AE Serious?</span>
+                                    <select name="Serious_AE" class=formcontrol>
+                                        <option></option>
+                                        <option>Yes</option>
+                                        <option>No</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <label><span class="question">Frequency</span>
+                                    <select name="Frequency" class=formcontrol>
+                                        <option></option>
+                                        <option>Single episode</option>
+                                        <option>Intermittent</option>
+                                        <option>Continuous</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-3">
+                            <div>
+                                <label><span class="question">Intensity</span>
+                                    <select name="Intensity" class=formcontrol>
+                                        <option></option>
+                                        <option>Mild</option>
+                                        <option>Moderate</option>
+                                        <option>Severe</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <label><span class="question">Relationship to study</span>
+                                    <select name="Relationship" class=formcontrol>
+                                        <option></option>
+                                        <option>Not Related</option>
+                                        <option>Possibly Related</option>
+                                        <option>Related</option>
+                                    </select>
+                                </label>
+                            </div>
+                            <div>
+                                <label><span class="question">Study Agent Action</span>
+                                    <select name="Study_Agent_Action" class=formcontrol>
+                                        <option></option>
+                                        <option>None</option>
+                                        <option>Dosage decrease</option>
+                                        <option>Interrupted</option>
+                                        <option>Patient withdrawn</option>
+                                        <option>Drug discontinued</option>
+                                        <option>Not applicable</option>
+                                    </select>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-1">
+                            <div>
+                                <label><span class="question">Treatment Required</span>
+                                    <select name="Treatment_Required" class=formcontrol>
+                                        <option></option>
+                                        <option>None</option>
+                                        <option>Concomitant Medication</option>
+                                        <option>Non-drug Tx</option>
+                                        <option>Hospitalization</option>
+                                        <option>Other (specify)</option>
+                                    </select>
+                                </label>
+                                <label><span class="question">Other</span>
+                                    <input type=text name="Other_Treatment" class="formcontrol fullwidth" />
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="formgroup">
+                    <div class="questiongroup">
+                        <fieldset class="grid-container-1">
+                            <label><span class="question">Outcome</span>
+                                <select name="Outcome" class=formcontrol>
+                                    <option></option>
+                                    <option>Resolved with no Sequelae</option>
+                                    <option>Resolved with Sequelae</option>
+                                    <option>Continuing</option>
+                                    <option>Fatal</option>
+                                    <option>Unknown</option>
+                                </select>
+                            </label>
+                        </fieldset>
+                    </div>
+                </div>
+                VmInclude: __HOST__/assets/html/modification_status.html
+            </form>
         </div>
+    </div>
+    <script>
+        function F__ID() {
+            //-------------------------------------
+            VmInclude: '__HOST__/assets/js/form.01.js'
+            VmInclude: '__HOST__/assets/js/shared-form.js'
+            //-------------------------------------
+            var load2 = m.load;
+            m.load = function () {
+                load2();
+                if ($('[type="date"]').prop('type') != 'date') {
+                    $('[type="date"]').datepicker();
+                }
+            }
+            //-------------------------------------
+        }
+    </script>
+    <style>
+        /*VmInclude:__HOST__/assets/css/wapp-form.css*/
+    </style>
+</div>
