@@ -109,10 +109,10 @@
     m[p+"EQ-5D-fu-data"]               ={url:H+"/form-grid/backend/eq-5d-data.html",Table:"EQ-5D-fu-sleepback",form_module:"EQ-5D-fu-form",task_name:"Follow-up - EQ-5D"};
     m[p+"EQ-5D-fu-form"]               ={url:H+"/form-grid/backend/eq-5d-form.html",Table:"EQ-5D-fu-sleepback",task_name:"Follow-up - EQ-5D",timepoint:'fu'};
 
-    //if(window.location.toString().indexOf('tb=demo')!=-1){
+    if(window.location.toString().indexOf('tb=demo')!=-1){
         for(p in $vm.module_list){
             $vm.module_list[p].Table="demo-"+$vm.module_list[p].Table;
         }
-    //}
+    }
 
 })();

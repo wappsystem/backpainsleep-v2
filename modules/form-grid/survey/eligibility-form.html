@@ -66,6 +66,9 @@
               </fieldset>
             </div>
           </div>
+          <div class="formgroup right" id="S1_check__ID" style="display:none">
+            <span >Please answer all questions</span>
+          </div>
           <div class="formgroup right">
             <button type="submit" d=1 class="submit_btn">Next</button>
           </div>
@@ -156,6 +159,9 @@
               </fieldset>
             </div>
           </div>
+          <div class="formgroup right" id="S2_check__ID" style="display:none">
+            <span >Please answer all questions</span>
+          </div>
           <div class="formgroup submit_dual_btn">
             <button type="button" d=-1 class="submit_btn">Previous</button>
             <button type="submit" d=1 class="submit_btn">Next</button>
@@ -230,6 +236,9 @@
                 <label class="rd_btn" for="driving_job_2__ID">No</label>
               </div>
             </fieldset>
+          </div>
+          <div class="formgroup right" id="S3_check__ID" style="display:none">
+            <span >Please answer all questions</span>
           </div>
           <div class="formgroup submit_dual_btn">
             <button type="button" d=-1 class="submit_btn">Previous</button>
@@ -460,6 +469,9 @@
               </fieldset>
             </div>
             <div style="display:none"><input name="ISI" type="number"></div>
+          </div>
+          <div class="formgroup right" id="S4_check__ID" style="display:none">
+            <span >Please answer all questions</span>
           </div>
           <div class="formgroup submit_dual_btn">
             <button type="button" d=-1 class="submit_btn">Previous</button>
@@ -771,6 +783,9 @@
      
             <div style="display:none"><input name="ESS" type="number"></div>
           </div>
+          <div class="formgroup right" id="S5_check__ID" style="display:none">
+            <span >Please answer all questions</span>
+          </div>
           <div class="formgroup submit_dual_btn">
             <button type="button" d=-1 class="submit_btn">Previous</button>
             <button type="submit" d=1 class="submit_btn">Submit</button>
@@ -925,7 +940,8 @@
       }
       //---------------------------------------
       $('#F__ID button').on('click', function (event) {
-        //console.log("Click")
+        console.log(current_I)
+        $('#S' + current_I + "_check__ID").show();
         var d = $(this).attr("d");
         d = parseInt(d);
         if (d < 0) show_section(current_I - 1);
@@ -948,6 +964,7 @@
         if (I >= N) I = N;
         $('#S' + I + '__ID').show();
         $('#S' + I + "__ID * ").removeAttr('disabled');
+        if(I!=current_I) $('#S' + current_I + "_check__ID").hide();
         current_I = I;
         $(window).scrollTop(0);
       }

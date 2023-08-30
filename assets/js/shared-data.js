@@ -115,7 +115,7 @@ m.cell_render=function(records,I,field,td){
             break;
         case '_Participant_ID':
             td.html(records[I].Data.Participant_uid);
-            console.log(records[I].Data)
+            //console.log(records[I].Data)
             break;
         case '_Notes':
             //default: create a hyperlink to load note module with task name and task UID
@@ -225,7 +225,7 @@ var process_lock=function(I){
     var id=m.records[I]._id;    
     var to_do_lock=0; if(lk==0) to_do_lock=1;
     $vm.request({cmd:"lock",id:id,table:m.Table,lock:to_do_lock},function(res){
-        console.log(res)
+        //console.log(res)
         if(res.status=='ok'){
             var $td=$('#grid__ID tr:nth-child('+(I+2)+')').find('td').eq(2);
             m.records[I].LK=to_do_lock;
