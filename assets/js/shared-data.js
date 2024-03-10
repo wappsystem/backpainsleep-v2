@@ -1,3 +1,4 @@
+var pquery={};
 var notes="notes-data";
 var note_table=$vm.module_list[notes].Table;
 //-------------------------------------
@@ -11,20 +12,29 @@ m.set_req=function(){
 };
 //-------------------------------------
 m.load=function(){
-        $('#nav_title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
-        if(m.input!=undefined && m.input.record!=undefined){
+    $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
+    if(m.input!=undefined && m.input.record!=undefined){
         $('#export_section__ID').hide();
-    }
-    else{
-        $('#export_section__ID').show();
-    }
+        }
+        else{
+            $('#export_section__ID').show();
+        }
+        if($('#export_screened__ID').prop('checked')==true) pquery={};
+        else pquery={"Data.Randomisation_Number": {"$ne" : ""}}; 
 }
 //-------------------------------
+$('#export_screened__ID').on('change',function(){
+    if($('#export_screened__ID').prop('checked')==true) pquery={};
+    else pquery={"Data.Randomisation_Number": {"$ne" : ""}}; 
+})
+//-------------------------------
+
 m.export_records=function(){
+    console.log("EXPORT SHARED")
     var tabledata=m.Table;
     m.Table=$vm.module_list['participant-data'].Table;
     var participant_rec={};
-    var req={cmd:"export",table:m.Table,I1:m.I1,search:$('#keyword__ID').val()}
+    var req={cmd:"export",table:m.Table,query:pquery,I1:m.I1,search:$('#keyword__ID').val()}
     open_model__ID();
     $vm.request(req,function(N,i,txt){
         //console.log(i+"/"+N);
@@ -33,32 +43,26 @@ m.export_records=function(){
             var len=txt.length;
             n_txt="["+txt.substring(5,len-9)+"]";
             participant_rec=JSON.parse(n_txt);
-            //console.log(JSON.stringify(participant_rec))
-            //$vm.download_csv(m.Table+".csv",o);
             close_model__ID();
             m.Table=tabledata;
             var req={cmd:"export",table:m.Table,I1:m.I1,search:$('#keyword__ID').val()}
             open_model__ID();
             $vm.request(req,function(N,i,txt){
-                //console.log("B"+i+"/"+N);
+                console.log("B"+i+"/"+N);
                 $('#msg__ID').text((100*i/N).toFixed(0)+"%");
                 if(i==-1){
                     var len=txt.length;
                     var data_rec="["+txt.substring(5,len-9)+"]";
                     var o=JSON.parse(data_rec);
-                    //console.log(o)
-                    for(var i=0;i<o.length;i++){
-                        var ig=o[i].Participant.split(' - ');
-                        o[i].Intervention_Group=ig[1];
-                    }
                     var fields_ex=m.fields.replace("_Participant_ID","Participant_uid")
                     var export_fields=fields_ex.split(',');
                     //Order by m.fields
-                    export_fields=export_fields.slice(4,export_fields.length-3);
-                    //console.log(export_fields.length)
+                    export_fields=export_fields.slice(3,export_fields.length-3);
+                    export_fields.splice(1, 1) // remover "Participant"
+                    export_fields.splice(1, 0, "Randomisation_Number")
+                    export_fields.splice(2, 0, "Group")
                     //Sorting export fields as export_fields
                     var oo=JSON.parse(JSON.stringify(o,export_fields));
-                    //console.log(oo);
                     //Create an empty item so download.csv will create all headings
                     var empty_item={}
                     for(var i=0;i<export_fields.length;i++){
@@ -71,14 +75,20 @@ m.export_records=function(){
                         for (var k=0;k<oo.length;k++){
                             if(oo[k].Participant_uid==participant_rec[i].ID){
                                 //if a particpant with a record for this form add to output
+                                //oo[k].Screening_Number=participant_rec[i].Screening_Number
+                                oo[k].Randomisation_Number=participant_rec[i].Randomisation_Number;
+                                oo[k].Group=participant_rec[i].Group;
                                 output_data.push(oo[k]);
                                 break;
                             }
                             //No record found add an empty record for participant
                             if(k==oo.length-1) { 
+                                //console.log(participant_rec[i])
                                 empty_item2=(JSON.parse(JSON.stringify(empty_item))); 
                                 empty_item2.Participant_uid=(participant_rec[i].ID).toString();
-                                //empty_item2.Participant=participant_rec[i].Randomisation_number+' - '+participant_rec[i].Intervention_Group;
+                                //empty_item2.Screening_Number=participant_rec[i].Screening_Number;
+                                empty_item2.Randomisation_Number=participant_rec[i].Randomisation_Number;
+                                empty_item2.Group=participant_rec[i].Group;
                                 //empty_item2.Intervention_Group=participant_rec[i].Intervention_Group;
                                 output_data.push(empty_item2);
                             };
