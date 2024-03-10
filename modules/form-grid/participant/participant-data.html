@@ -9,7 +9,7 @@
             //-------------------------------------
             $('#title__ID').text('Participants');            
             //-------------------------------------
-            var fields="_Participant_ID,Randomisation_Number,Group,name,telephone,email,BL_Sent,cont_pref,Access_Code|Access_Code,Notes,_Data_Entry,_Baseline,_AE_Check_1,_AE_Check_3,_Follow_up,_Login_ID,_Password";
+            var fields="_Participant_ID,Randomisation_Number,Group,name,telephone,email,BL_Sent,cont_pref,Access_Code,Notes,_Data_Entry,_Baseline,_AE_Check_1,_AE_Check_3,_Follow_up,_Login_ID,_Password";
             m.fields="_Form,"+fields+",Submit_date,Submitted_by,_Delete";
             //-------------------------------------
             m.cell_render=function(records,I,field,td,set_value,source){
@@ -117,12 +117,25 @@
                         break;
                 }
             }
+            var pquery={};
             //-------------------------------------
+            m.load=function(){
+                $('#title__ID').text($vm.module_list[$vm.vm['__ID'].name].task_name);
+                    if($('#export_screened__ID').prop('checked')==true) pquery={};
+                    else pquery={"Data.Randomisation_Number": {"$ne" : ""}}; 
+            }
+            //-------------------------------
+            $('#export_screened__ID').on('change',function(){
+                if($('#export_screened__ID').prop('checked')==true) pquery={};
+                else pquery={"Data.Randomisation_Number": {"$ne" : ""}}; 
+            })
+            //-------------------------------
+
             m.export_records=function(){
                 tabledata=m.Table;
                 m.Table=$vm.module_list['participant-data'].Table;
                 var participant_rec={};
-                var req={cmd:"export",table:m.Table,I1:m.I1,search:$('#keyword__ID').val()}
+                var req={cmd:"export",table:m.Table,query:pquery,I1:m.I1,search:$('#keyword__ID').val()}
                 open_model__ID();
                 $vm.request(req,function(N,i,txt){
                     //console.log(i+"/"+N);
@@ -138,6 +151,7 @@
                         //console.log(export_fields);
                         //console.log(participant_rec);
                         export_fields=export_fields.slice(1,export_fields.length-3);
+                        //console.log(JSON.stringify(export_fields));
                         var oo=JSON.parse(JSON.stringify(participant_rec,export_fields));
                         var tmp=JSON.stringify(oo).replace(/\bID\b/g,"Participant ID")
                         oo=JSON.parse(tmp);
