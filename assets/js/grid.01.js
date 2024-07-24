@@ -117,7 +117,11 @@ m.render=function(){
             if(m.records[i][b]!==undefined){
                 value=m.records[i][b];
                 //if(b=="Submit_date") value=$vm.date_to_ddmmyyyy(value.substring(0,10));
-                if(b=="Submit_date") value=new Date(value).toLocaleDateString(window.navigator.userLanguage || window.navigator.language);
+                //if(b=="Submit_date") value=new Date(value).toLocaleDateString(window.navigator.userLanguage || window.navigator.language);
+                if(b=="Submit_date") {
+                    var timepart=value.substring(11,19)
+                    value=$vm.date_to_ddmmyyyy(value.substring(0,10))+" "+timepart;
+                }
             }
             else{
                 if(m.records[i]['Data']!=undefined && m.records[i]['Data'][b]!==undefined){
